@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "backend graphql data server",
+  "main": "server.ts",
+  "scripts": {
+    "watch": "tsc -w",
+    "dev": "nodemon dist/server.js",
+    "start": "node dist/server.js",
+    "nostart": "ts-node src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name":"Sky Johnson",
+    "email": "jsky.johnson@gmail.com",
+    "url": "https://skyjohnson.me",
+    "github": "jskyjohnson"
+  },
+  "license": "SEE LICENSE IN ROOT",
+  "dependencies": {
+    "apollo-server-express": "^2.18.2",
+    "argon2": "^0.27.0",
+    "class-validator": "^0.12.2",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^9.0.0",
+    "type-graphql": "^1.1.0",
+    "typescript": "^4.0.5",
+    "uuid": "^8.3.1"
+  }
+}
