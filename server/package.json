@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "backend graphql data server",
   "main": "server.ts",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "author": {
-    "name":"Sky Johnson",
+    "name": "Sky Johnson",
     "email": "jsky.johnson@gmail.com",
     "url": "https://skyjohnson.me",
     "github": "jskyjohnson"
@@ -27,5 +27,8 @@
     "type-graphql": "^1.1.0",
     "typescript": "^4.0.5",
     "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1"
   }
 }
