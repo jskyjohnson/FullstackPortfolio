@@ -1,11 +1,12 @@
 import React, {Fragment} from 'react';
+import { PageHeader } from '../containers/pageheader/PageHeader';
 
 export const Home = () => {
 	return (
 		<Fragment>
-			<div>
+				<PageHeader />
+
 				Hello this is the home page!
-			</div>
 		</Fragment>
 	)
 }
