@@ -1,4 +1,13 @@
-export const socials = [
+import { SemanticICONS } from "semantic-ui-react/dist/commonjs/generic";
+
+export interface socialsinfoType {
+  id: number;
+  username: string;
+  media: SemanticICONS;
+}
+
+
+export const socialsinfo : socialsinfoType[] = [
   {
     "id": 1,
     "media": "instagram",

@@ -1,5 +1,5 @@
 import React from "react";
-import { socials } from "data/socials";
+import { socialsinfo, } from "data/socialsinfo";
 import { Grid, Icon } from "semantic-ui-react";
 import { SemanticICONS } from "semantic-ui-react/dist/commonjs/generic";
 
@@ -12,7 +12,7 @@ export const Socials = () => {
     <>
       <Grid>
         <Grid.Column>
-          {socials.map((social) => (
+          {socialsinfo.map((social) => (
             <a
               style={linkStyle}
               key={social.id}
@@ -20,8 +20,8 @@ export const Socials = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {social.media}
-              {/* <Icon name={ social.media }/> */}
+              {/* {social.media} */}
+              <Icon name={ social.media }/>
             </a>
           ))}
         </Grid.Column>
