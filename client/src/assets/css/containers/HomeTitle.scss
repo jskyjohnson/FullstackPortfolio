@@ -61,6 +61,10 @@
   margin-top: 5vh;
   margin-right: 5vh;
   width: 60%;
+
+  @media #{$media_md}{
+    width: 90%;
+  }
 }
 
 .p_carousel_text {

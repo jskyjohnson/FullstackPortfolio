@@ -21,44 +21,44 @@ const slick_settings = {
 };
 
 export const HomeTitle = () => {
-  let r_carousel_text = shuffleArray(homepageinfo.carousel_text_values);
+  const r_carousel_text = shuffleArray(homepageinfo.carousel_text_values);
   return (
-    <Grid columns={2} stackable>
-      <Grid.Row>
-        <Grid.Column>
-          <div className="div_intro_wrapper">
-            <Header as="h1" className="h_intro">
-              {homepageinfo.hero_intro}
-              <span className="dot">.</span>
-            </Header>
+    <Grid columns={2}>
+      <Grid.Column tablet="8" mobile="16" computer={8}>
+        <div className="div_intro_wrapper">
+          <Header as="h1" className="h_intro">
+            {homepageinfo.hero_intro}
+            <span className="dot">.</span>
+          </Header>
 
-            <div className="h_intro_clone">{homepageinfo.hero_intro}</div>
+          <div className="h_intro_clone">{homepageinfo.hero_intro}</div>
 
-            <p className="p_intro_text">
-              {userInfoFill(homepageinfo.intro_text)}
-            </p>
+          <p className="p_intro_text">
+            {userInfoFill(homepageinfo.intro_text)}
+          </p>
 
-            <Slider {...slick_settings}>
-              {r_carousel_text.map((value) => (
-                <div>
-                  <p className="p_carousel_text">
-                    {userInfoFill(homepageinfo.carousel_text)}<span className="p_carousel_value">{value}</span>
-                  </p>
-                </div>
-              ))}
-            </Slider>
-          </div>
-        </Grid.Column>
-        <Grid.Column only="computer" verticalAlign="bottom" textAlign="right">
-          <div>
-            <Image
-              className="img_portrait"
-              spaced={"left"}
-              src={placeholderimage}
-            />
-          </div>
-        </Grid.Column>
-      </Grid.Row>
+          <Slider {...slick_settings}>
+            {r_carousel_text.map((value) => (
+              <p className="p_carousel_text" key="0">
+                {userInfoFill(homepageinfo.carousel_text)}
+                <span className="p_carousel_value">{value}</span>
+              </p>
+            ))}
+          </Slider>
+        </div>
+      </Grid.Column>
+
+      <Grid.Column
+        only="tablet computer"
+        verticalAlign="bottom"
+        textAlign="right"
+      >
+        <Image
+          className="img_portrait"
+          spaced={"left"}
+          src={placeholderimage}
+        />
+      </Grid.Column>
     </Grid>
   );
 };
