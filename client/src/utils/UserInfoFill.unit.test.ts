@@ -1,4 +1,4 @@
-import {userInfoFill} from './UserInfoFill'
+import {userInfoFill} from './userInfoFill'
 
 describe('userInfoFill', () => {
 	it('should replace the values of a string with %userinfo% with the user info value', () => {

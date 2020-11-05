@@ -1,0 +1,40 @@
+@import "../variables";
+@import "../utils";
+
+.ui.header.h_intro {
+  font-family: $ubuntu_b;
+  color: $body_headline_color;
+  font-size: 15vw;
+	line-height: 1.15;
+
+  @media #{$media_sm} {
+    font-size: 6.13rem;
+  }
+  
+  .dot{
+    color: $body_main_element_color;
+  }
+}
+
+.p_intro_text {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+
+  font-size: 2rem;
+
+  @media #{$media_sm} {
+    font-size: 1rem;
+  }
+}
+
+.div_intro_wrapper{
+  margin-left: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.ui.left.spaced.image.img_portrait{
+  margin-top: 5vh;
+  margin-right: 5vh;
+  width: 60%;
+}
