@@ -1,3 +1,9 @@
+@import "../variables";
+
+.overlay > div{
+	background-color: white;
+}
+
 .ui.centered.grid.page_header_main{
 	padding: 3vh 0vh 1vh 1vh;
 }
@@ -10,3 +16,37 @@
 	min-height: auto;
 }
 
+// div.ui.grid.push.right.wide.visible.sidebar{
+// 	font-size: 1.5rem;
+// 	padding: 3vh;
+// }
+
+
+html body div#root div.pushable div.ui.grid.overlay.right.wide.visible.sidebar.sidebar_back div.row div.column.sidebar_column{
+	padding: 4vh;
+}
+
+// .sidebar_column{
+// 	padding: 2vh;
+// }
+
+.vertical > a, div, div.ui.borderless.fluid.vertical.menu a.link.item{
+	font-family: $font_secondary_bold;
+	color: $menu_primary_links_hover_color;
+}
+
+// div.ui.borderless.fluid.vertical.menu a.link.item{
+// 	color: red;
+// }
+
+div.row:nth-child(3) > div{
+	font-family: $font_primary;
+	font-size: 1.2rem;
+	color: $body_headline_color;
+	padding: 2vh 0;
+}
+
+div.row:nth-child(3) > div:nth-child(3){
+	color: $body_text_secondary_color;
+	font-size: .8rem;
+}

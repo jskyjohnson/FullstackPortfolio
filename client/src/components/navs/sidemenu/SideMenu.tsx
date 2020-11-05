@@ -1,20 +1,23 @@
 import React from "react";
-import { Menu, Container, Dropdown } from "semantic-ui-react";
+import { Dropdown, Menu } from "semantic-ui-react";
 
 const menuStyle = {
   border: "none",
   borderRadius: 0,
   boxShadow: "none",
+  fontSize: "1.5rem",
 };
-
 const projectsMenuStyle ={
   padding: "0"
 }
 
-export const HeaderMenu = () => {
+
+export const SideMenu = () => {
   return (
-    <Menu pointing secondary borderless style={menuStyle} widths={5}>
-      <Menu.Item link as="a" href="/">Home</Menu.Item>
+    <Menu vertical borderless fluid style={menuStyle}>
+      <Menu.Item link as="a" href="/">
+        Home
+      </Menu.Item>
       <Menu.Item link as="a" href="/about">
         About Me
       </Menu.Item>
@@ -22,11 +25,9 @@ export const HeaderMenu = () => {
         Contact
       </Menu.Item>
       <Menu.Item style={projectsMenuStyle}>
-        <Dropdown text="Projects" className="link item">
-          <Dropdown.Menu>
-            <Dropdown.Item>
-              All Projects
-            </Dropdown.Item>
+        <Dropdown item compact text="Projects" fluid>
+          <Dropdown.Menu direction="left" scrolling={false}>
+            <Dropdown.Item>All Projects</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Item>Computer Science</Dropdown.Item>
             <Dropdown.Item>Other projects</Dropdown.Item>
@@ -34,7 +35,7 @@ export const HeaderMenu = () => {
         </Dropdown>
       </Menu.Item>
 
-      <Menu.Item as="a"> Blog </Menu.Item>
+			<Menu.Item link as="a" href="/blog"> Blog </Menu.Item>
     </Menu>
   );
 };
