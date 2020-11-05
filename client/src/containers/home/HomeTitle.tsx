@@ -3,9 +3,10 @@ import { Grid, Header, Image, Segment } from "semantic-ui-react";
 import placeholderimage from "assets/image/placeholder/527x600.jpg";
 import { userInfoFill } from "utils/userInfoFill";
 import { homepageinfo } from "data/homepageinfo";
-
+import Slider from "react-slick";
 import "assets/css/containers/HomeTitle.scss";
 import "slick-carousel/slick/slick.scss";
+import { shuffleArray } from "utils/shuffleArray";
 
 const slick_settings = {
   dots: false,
@@ -16,10 +17,11 @@ const slick_settings = {
   arrows: false,
   autoplay: true,
   autoplaySpeed: 2000,
-  fade: true
+  fade: true,
 };
 
 export const HomeTitle = () => {
+  let r_carousel_text = shuffleArray(homepageinfo.carousel_text_values);
   return (
     <Grid columns={2} stackable>
       <Grid.Row>
@@ -29,14 +31,22 @@ export const HomeTitle = () => {
               {homepageinfo.hero_intro}
               <span className="dot">.</span>
             </Header>
+
             <div className="h_intro_clone">{homepageinfo.hero_intro}</div>
+
             <p className="p_intro_text">
               {userInfoFill(homepageinfo.intro_text)}
             </p>
 
-            <p className="p_carousel_text"> {userInfoFill(homepageinfo.carousel_text)}</p>
-
-            
+            <Slider {...slick_settings}>
+              {r_carousel_text.map((value) => (
+                <div>
+                  <p className="p_carousel_text">
+                    {userInfoFill(homepageinfo.carousel_text)}<span className="p_carousel_value">{value}</span>
+                  </p>
+                </div>
+              ))}
+            </Slider>
           </div>
         </Grid.Column>
         <Grid.Column only="computer" verticalAlign="bottom" textAlign="right">

@@ -5,20 +5,44 @@
   font-family: $ubuntu_b;
   color: $body_headline_color;
   font-size: 15vw;
-	line-height: 1.15;
+  line-height: 1.15;
 
   @media #{$media_sm} {
     font-size: 6.13rem;
   }
-  
-  .dot{
+
+  .dot {
     color: $body_main_element_color;
   }
 }
 
+.h_intro_clone {
+  font-family: $font_secondary_bold;
+  color: $body_text_clone_color;
+  position: absolute;
+  z-index: -1;
+  line-height: 77%;
+  font-size: 23vw;
+
+  // @media #{$media_xxl} {
+  //   font-size: 29.411764705882355vw;
+  // }
+
+  @media #{$media_sm} {
+    right: 4rem;
+    bottom: 0rem;
+    font-size: 13rem;
+  }
+
+  &.left {
+    left: 0;
+    right: 0;
+  }
+}
+
 .p_intro_text {
+  font-family: $font_primary;
   padding-top: 2rem;
-  padding-bottom: 4rem;
 
   font-size: 2rem;
 
@@ -27,14 +51,27 @@
   }
 }
 
-.div_intro_wrapper{
+.div_intro_wrapper {
   margin-left: 5rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
-.ui.left.spaced.image.img_portrait{
+.ui.left.spaced.image.img_portrait {
   margin-top: 5vh;
   margin-right: 5vh;
   width: 60%;
+}
+
+.p_carousel_text {
+  font-family: $font_primary_bold;
+  font-size: 4rem;
+
+  @media #{$media_sm} {
+    font-size: 2rem;
+  }
+
+  .p_carousel_value {
+    color: $body_main_element_color;
+  }
 }

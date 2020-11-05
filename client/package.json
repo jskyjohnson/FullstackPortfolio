@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-slick": "^0.23.4",
     "dotenv": "^8.2.0"
   }
 }

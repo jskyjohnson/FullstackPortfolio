@@ -9,7 +9,7 @@ export interface homepageinfoType {
 export const homepageinfo: homepageinfoType = {
   hero_intro: "Hello",
   intro_text:
-    "My name is %userinfo%, I like to do a lot.",
+    "My name is %userinfo%, welcome to my portfolio.",
 	carousel_text: "I'm a ",
-	carousel_text_values: ["Software Developer", "Photographer", "Etc..."]
+	carousel_text_values: ["Software Developer", "Photographer", "Data Scientist", "Fullstack Developer", "Game Designer", "Graphic Designer"]
 };
