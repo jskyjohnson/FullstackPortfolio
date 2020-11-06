@@ -4,31 +4,32 @@ import { Home } from "pages/Home";
 import { About } from "pages/About";
 import { page404 } from "pages/404";
 import { Contact } from "pages/Contact";
-
-
+import { PageHeader } from "components/pageheader/PageHeader";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route
-          exact
-          path={`${process.env.PUBLIC_URL + "/"}`}
-          component={Home}
-        />
-        <Route
-          exact
-          path={`${process.env.PUBLIC_URL + "/about"}`}
-          component={About}
-        />
-        <Route
-          exact
-          path={`${process.env.PUBLIC_URL + "/about"}`}
-          component={Contact}
-        />
-        <Route exact component={ page404 }/>
-      </Switch>
-    </Router>
+    <PageHeader>
+      <Router>
+        <Switch>
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL + "/"}`}
+            component={Home}
+          />
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL + "/about"}`}
+            component={About}
+          />
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL + "/contact"}`}
+            component={Contact}
+          />
+          <Route exact component={page404} />
+        </Switch>
+      </Router>
+    </PageHeader>
   );
 }
 

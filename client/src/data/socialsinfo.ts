@@ -27,5 +27,10 @@ export const socialsinfo : socialsinfoType[] = [
     "id": 4,
     "media": "github",
     "username": "jskyjohnson"
+  },
+  {
+    "id": 5,
+    "media": "500px",
+    "username": "p/iskyz"
   }
 ]

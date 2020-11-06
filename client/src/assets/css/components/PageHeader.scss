@@ -4,7 +4,7 @@
 	background-color: white;
 }
 
-.ui.centered.grid.page_header_main{
+.ui.grid.page_header_main{
 	padding: 3vh 0vh 1vh 1vh;
 }
 
@@ -16,28 +16,22 @@
 	min-height: auto;
 }
 
-// div.ui.grid.push.right.wide.visible.sidebar{
-// 	font-size: 1.5rem;
-// 	padding: 3vh;
-// }
-
 
 html body div#root div.pushable div.ui.grid.overlay.right.wide.visible.sidebar.sidebar_back div.row div.column.sidebar_column{
 	padding: 4vh;
 }
-
-// .sidebar_column{
-// 	padding: 2vh;
-// }
 
 .vertical > a, div, div.ui.borderless.fluid.vertical.menu a.link.item{
 	font-family: $font_secondary_bold;
 	color: $menu_primary_links_hover_color;
 }
 
-// div.ui.borderless.fluid.vertical.menu a.link.item{
-// 	color: red;
-// }
+//Menu colors for normal nav
+div.ui.borderless.pointing.secondary.five.item.menu a.link.item, div.ui.borderless.pointing.secondary.five.item.menu div.item, div.ui.dropdown.link.item div.divider.text{
+	font-family: $font_secondary;
+	font-size: 1.2rem;
+	color: $menu_primary_links_hover_color;
+}
 
 div.row:nth-child(3) > div{
 	font-family: $font_primary;

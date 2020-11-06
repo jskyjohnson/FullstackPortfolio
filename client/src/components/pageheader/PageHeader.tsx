@@ -44,7 +44,6 @@ export const PageHeader = ({ children }: PageProp) => {
           animation="overlay"
           icon="labeled"
           onHide={() => setVisible(false)}
-          vertical
           visible={visible}
           width="wide"
           direction="right"
@@ -71,9 +70,9 @@ export const PageHeader = ({ children }: PageProp) => {
 
         <SidebarPusher dimmed={visible}>
           <Container>
-            <Grid className="page_header_main" centered verticalAlign="middle">
+            <Grid className="page_header_main"  verticalAlign="middle">
               <Grid.Row>
-                <GridColumn computer={4} tablet={7} mobile={8} textAlign="left">
+                <GridColumn computer={4} tablet={7} mobile={8} textAlign="left" floated="left">
                   <Logo />
                 </GridColumn>
 
@@ -83,7 +82,7 @@ export const PageHeader = ({ children }: PageProp) => {
 
                 <GridColumn
                   floated="right"
-                  width={3}
+                  width={4}
                   textAlign="right"
                   only="computer"
                 >

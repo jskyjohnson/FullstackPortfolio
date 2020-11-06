@@ -1,0 +1,33 @@
+@import "../variables";
+
+
+h2.ui.header.works_header {
+
+	margin: 8vh 5vw 5vh 10vw;
+  font-family: $ubuntu_b;
+  color: $body_headline_color;
+  font-size: 5rem;
+  line-height: 1.15;
+
+  @media #{$media_sm} {
+    font-size: 3rem;
+	}
+
+	&:hover{
+		transform: perspective(1px) scale(1.1) translateZ(0);
+	}
+
+  .dot {
+		color: $body_main_element_color;
+	}
+	
+	.offline{
+		width: 25vw;
+		height: 4vh;
+		z-index: -1;
+		position: relative;
+		top: -4vh;
+		left: 8vw;
+		background-color: $body_main_element_color;
+	}
+}
