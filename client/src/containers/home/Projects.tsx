@@ -2,6 +2,7 @@ import React from "react";
 import { Divider, Header } from "semantic-ui-react";
 
 import 'assets/css/containers/Projects.scss'
+import { ProjectsGallary } from "components/gallary/ProjectsGallary";
 
 export const Projects = () => {
   return (
@@ -11,7 +12,8 @@ export const Projects = () => {
         My Projects<span className="dot">.</span>
 				<div className="offline"/>
       </Header>
-      Yaayyy a whole bunch of stuff
+
+			<ProjectsGallary />
     </div>
   );
 };
