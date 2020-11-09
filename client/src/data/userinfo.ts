@@ -8,8 +8,8 @@ export interface contactInfo {
   email: string;
   location: string;
   contactMessage: string[];
-  lat: string,
-  long: string,
+  lat: string;
+  long: string;
   services: apps[];
 }
 
@@ -18,6 +18,7 @@ export interface userinfoType {
   first_name: string;
   last_name: string;
   contact: contactInfo;
+  footerMessage: string;
 }
 
 export const userinfo: userinfoType = {
@@ -45,7 +46,6 @@ export const userinfo: userinfoType = {
         profileUrl: "https://www.instagram.com/i.skyz.design/",
       },
     ],
-
-    // [ ["LinkedIn", "jskyjohnson", "https://www.linkedin.com/in/jskyjohnson"], ["idk", "anotherthing"] ]
   },
+  footerMessage: "Sky Johnson 2020. Made with React"
 };

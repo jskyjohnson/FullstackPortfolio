@@ -1,4 +1,4 @@
-import { Blogs } from "containers/home/Blogs";
+import { BlogsHome } from "containers/home/BlogsHome";
 import { ContactHome } from "containers/home/ContactHome";
 import { HomeTitle } from "containers/home/HomeTitle";
 import { Projects } from "containers/home/Projects";
@@ -17,14 +17,13 @@ export const Home = () => {
 
         <Skills />
 
-        <Divider />
         {/* Skills */}
 
-        <Blogs />
+        <BlogsHome />
         {/* Blogging */}
 
         <ContactHome />
-        
+
         {/* <ContactMe /> */}
       </section>
     </>

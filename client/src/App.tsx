@@ -5,6 +5,7 @@ import { About } from "pages/About";
 import { page404 } from "pages/404";
 import { Contact } from "pages/Contact";
 import { PageHeader } from "components/pageheader/PageHeader";
+import { Footer } from "components/footer/Footer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route exact component={page404} />
         </Switch>
       </Router>
+      <Footer />
     </PageHeader>
   );
 }

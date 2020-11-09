@@ -8,13 +8,14 @@ import { Map } from "components/contact/Map";
 
 export const ContactHome = () => {
   return (
-    <Grid columns={3}>
+    <Grid columns={3} className="contact_wrapper">
       <Grid.Row>
-        <Grid.Column width={2} only="computer" />
-        <Grid.Column width={12}>
-          <Grid columns={2}>
+        <Grid.Column width={2} computer="2" tablet="1" />
+        <Grid.Column tablet="14" computer="12">
+          <Grid columns={2} stackable>
             <Grid.Row>
               <Grid.Column>
+                
                 <Grid.Row className="contact_form">
                   <Header as="h3">Contact me</Header>
 
@@ -26,11 +27,9 @@ export const ContactHome = () => {
                   <ContactInfo />
                 </Grid.Row>
               </Grid.Column>
-
               <Grid.Column>
                 <Grid.Row className="contact_availability">
                   <Header as="h3" >Let's get in touch!</Header>
-
                   <ContactAvailability />
                 </Grid.Row>
                 <Grid.Row>
@@ -40,7 +39,7 @@ export const ContactHome = () => {
             </Grid.Row>
           </Grid>
         </Grid.Column>
-        <Grid.Column width={2} only="computer" />
+        <Grid.Column width={2} computer="2" tablet="1"/>
       </Grid.Row>
     </Grid>
   );

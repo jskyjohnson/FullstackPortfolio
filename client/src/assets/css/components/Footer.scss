@@ -1,0 +1,21 @@
+@import "../variables";
+
+.ui.two.column.grid.footer {
+  font-family: $font_primary;
+  padding: 2rem;
+
+  div.row div.column.copyright {
+    font-family: $font_primary;
+		text-align: center;
+		font-size: 1.2rem;
+  }
+
+  div.center a p {
+    font-family: $font_primary;
+    color: $body_links_color;
+
+    &:hover {
+      color: $body_links_hover_color;
+    }
+  }
+}

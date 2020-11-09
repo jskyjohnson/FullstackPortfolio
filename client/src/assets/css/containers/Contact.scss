@@ -1,6 +1,11 @@
 @import "../variables";
 
 /*-- Contact Form --*/
+.ui.grid.contact_wrapper{
+  background-color: $input_background_primary_color;
+  margin-top: 1vh;
+  padding-top: 5vh;
+}
 
 .contact_form {
   margin-bottom: 3vh;

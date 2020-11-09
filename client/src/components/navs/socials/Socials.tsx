@@ -7,6 +7,7 @@ export interface SocialsProps {
   children?: React.ReactElement;
   align?: "right" | "center" | "left" | "justified" | undefined;
   size?: IconSizeProp;
+  texted?: boolean;
 }
 
 //There's probably a better way to do default propping
@@ -40,7 +41,12 @@ export const Socials = (props: SocialsProps) => {
             rel="noopener noreferrer"
           >
             {/* {social.media} */}
-            <Icon name={social.media} size={d_props.size} />
+            {d_props.texted? (
+              <p >{social.media}:{social.username}</p>
+            ):(
+              <Icon name={social.media} size={d_props.size} />
+            )}
+            
           </a>
         ))}
         {props.children}
