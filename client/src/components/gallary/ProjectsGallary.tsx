@@ -66,8 +66,8 @@ export const ProjectsGallary = () => {
       {/* Masonry Gallary */}
       <div className="gallery">
         <div className="gallery_elements">
-          {projectData.map((project: projectsTypes) => (
-            <GallaryElement element={project} filter={filter} />
+          {projectData.map((project: projectsTypes, key:number) => (
+            <GallaryElement key={key} element={project} filter={filter} />
           ))}
         </div>
       </div>

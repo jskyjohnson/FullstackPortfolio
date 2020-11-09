@@ -1,19 +1,28 @@
 import React from "react";
-import { Divider, Header } from "semantic-ui-react";
+import { Divider, Grid, Header, Icon } from "semantic-ui-react";
 
-import 'assets/css/containers/Projects.scss'
+import "assets/css/containers/Projects.scss";
 import { ProjectsGallary } from "components/gallary/ProjectsGallary";
 
 export const Projects = () => {
   return (
     <div>
-			{/* <Divider /> */}
+      {/* <Divider /> */}
       <Header as="h2" className="works_header">
         My Projects<span className="dot">.</span>
-				<div className="offline"/>
+        <div className="line" />
       </Header>
 
-			<ProjectsGallary />
+      <ProjectsGallary />
+
+      <div className="seemore_header">
+        <a  href={"/projects"}>
+          <h3>
+            SEE MORE <Icon name="chevron right" />{" "}
+          </h3>
+          <div className="line" />
+        </a>
+      </div>
     </div>
   );
 };

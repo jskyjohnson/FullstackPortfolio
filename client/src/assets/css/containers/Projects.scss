@@ -1,9 +1,7 @@
 @import "../variables";
 
-
 h2.ui.header.works_header {
-
-	margin: 8vh 5vw 5vh 10vw;
+  margin: 8vh 5vw 5vh 10vw;
   font-family: $ubuntu_b;
   color: $body_headline_color;
   font-size: 5rem;
@@ -11,23 +9,64 @@ h2.ui.header.works_header {
 
   @media #{$media_sm} {
     font-size: 3rem;
-	}
+  }
 
-	&:hover{
-		transform: perspective(1px) scale(1.1) translateZ(0);
-	}
+  &:hover {
+    transform: perspective(1px) scale(1.1) translateZ(0);
+    .line {
+      transform: perspective(3px) scale(1.5) translateZ(0);
+    }
+  }
 
   .dot {
-		color: $body_main_element_color;
+    color: $body_main_element_color;
+  }
+
+  .line {
+    width: 25vw;
+    height: 4vh;
+    z-index: -1;
+    position: relative;
+    top: -4vh;
+    left: 8vw;
+    background-color: $body_main_element_color;
+  }
+}
+
+
+.seemore_header {
+	margin: 8vh 5vw 5vh 10vw;
+
+  h3 {
+    font-family: $font_secondary;
+    color: $body_headline_color;
+    font-size: 1.5rem;
 	}
 	
-	.offline{
-		width: 25vw;
-		height: 4vh;
-		z-index: -1;
-		position: relative;
-		top: -4vh;
-		left: 8vw;
-		background-color: $body_main_element_color;
+	.line {
+    width: 10vw;
+    height: 1vh;
+    z-index: -1;
+    position: relative;
+    top: -2vh;
+    left: 2vw;
+    background-color: $body_main_element_color;
 	}
+	
+	&:hover {
+		
+		padding-left: 5rem;
+		margin-left: -5rem;
+		transform: perspective(1px) scale(1.1) translateZ(0) translateX(3vh);
+		font-size: 2rem;
+		transition: all 0.3 ease;
+
+		h3{
+			margin-left: 5rem;
+			font-family: $font_secondary_bold;
+		}
+    .line {
+      transform: perspective(3px) scale(1.2) translateZ(0) scaleX(3) translateX(6vh);
+    }
+  }
 }

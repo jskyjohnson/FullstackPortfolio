@@ -33,7 +33,7 @@ export const temp_projectsInfo: projectsTypes[] = [
     title: "sample 4",
 		category: "Computer Science",
 		filter: "cs",
-    thumbnail: "./placeholder/527x600.jpg",
+    thumbnail: "./placeholder/966x560.jpg",
 	},
 	{
     id: 5,
@@ -48,6 +48,24 @@ export const temp_projectsInfo: projectsTypes[] = [
 		category: "Computer Science",
 		filter: "cs",
     thumbnail: "./placeholder/527x600.jpg",
+  },{
+    id: 7,
+    title: "sample 7",
+		category: "Photography",
+		filter: "photo",
+    thumbnail: "./placeholder/527x600.jpg",
+  },{
+    id: 8,
+    title: "sample 8",
+		category: "Computer Science",
+		filter: "cs",
+    thumbnail: "./placeholder/966x560.jpg",
+  },{
+    id: 9,
+    title: "sample 9",
+		category: "Photography",
+		filter: "photo",
+    thumbnail: "./placeholder/1113x510.jpg",
   },
 ];
 
