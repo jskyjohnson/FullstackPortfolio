@@ -1,5 +1,5 @@
 import { BlogsHome } from "containers/home/BlogsHome";
-import { ContactHome } from "containers/home/ContactHome";
+import { Contact } from "containers/Contact";
 import { HomeTitle } from "containers/home/HomeTitle";
 import { Projects } from "containers/home/Projects";
 import { Skills } from "containers/home/Skills";
@@ -17,14 +17,9 @@ export const Home = () => {
 
         <Skills />
 
-        {/* Skills */}
-
         <BlogsHome />
-        {/* Blogging */}
 
-        <ContactHome />
-
-        {/* <ContactMe /> */}
+        <Contact />
       </section>
     </>
   );

@@ -16,7 +16,7 @@ import "assets/css/components/BlogHome.scss";
 
 export const BlogHomeElement = ({ ...props }: blogPostTypes) => {
   return (
-    <Card className="blog_home_element">
+    <Card className="blog_home_element" href={"blog/" + props.id}>
 			<Image src={props.thumbnail} wrapperd className="element_fit" />
       <Card.Content>
         

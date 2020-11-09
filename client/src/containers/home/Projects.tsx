@@ -18,7 +18,7 @@ export const Projects = () => {
       <div className="seemore_header">
         <a  href={"/projects"}>
           <h3>
-            SEE MORE <Icon name="chevron right" />{" "}
+            See More <Icon name="chevron right" />{" "}
           </h3>
           <div className="line" />
         </a>

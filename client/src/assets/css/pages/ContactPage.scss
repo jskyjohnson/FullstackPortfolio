@@ -1,0 +1,43 @@
+@import "../variables";
+
+h2.ui.header.contact_header {
+  margin: 0vh 0vw -3vh 8vw;
+  font-family: $font_secondary_bold;
+  color: $body_headline_color;
+  font-size: 7rem;
+  text-align: left;
+
+  @media #{$media_sm} {
+    font-size: 5rem;
+  }
+
+  &:hover {
+    transform: perspective(1px) scale(1.1) translateX(5vh);
+    .line {
+      transform: perspective(3px) scale(1.5);
+    }
+  }
+
+  .dot {
+    color: $body_main_element_color;
+  }
+
+  .line {
+    width: 20vw;
+    height: 4vh;
+    z-index: -1;
+    position: relative;
+    top: -6vh;
+    left: 4%;
+		background-color: $body_main_element_color;
+		@media #{$media_sm} {
+			top: -3vh;
+			width: 20vw;
+    	height: 2vh;
+		}
+  }
+}
+
+div.ui.three.column.grid.contact_wrapper{
+	padding-top: 1vh;
+}

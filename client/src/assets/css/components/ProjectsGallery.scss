@@ -65,6 +65,14 @@ div.ui.huge.compact.text.menu button.ui.button.item.gallery_menu_item {
         width: 100%;
       }
 
+      
+      //Hides 9th media item so it only displays 8..
+      @media #{$media_lg} {
+        &:nth-child(9) {
+          display: none;
+        }
+      }
+
       // &:nth-child(9n+1){
       // 	&:before{
       // 		padding-top: 100%;
