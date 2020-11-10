@@ -1,5 +1,6 @@
 import React from "react";
 import { Dropdown, Menu } from "semantic-ui-react";
+import "assets/css/components/Navs.scss";
 
 const menuStyle = {
   border: "none",
@@ -7,11 +8,6 @@ const menuStyle = {
   boxShadow: "none",
   fontSize: "1.5rem",
 };
-const projectsMenuStyle ={
-  padding: "0"
-}
-
-
 export const SideMenu = () => {
   return (
     <Menu vertical borderless fluid style={menuStyle}>
@@ -24,18 +20,14 @@ export const SideMenu = () => {
       <Menu.Item link as="a" href="/contact">
         Contact
       </Menu.Item>
-      <Menu.Item style={projectsMenuStyle}>
-        <Dropdown item compact text="Projects" fluid>
-          <Dropdown.Menu direction="left" scrolling={false}>
-            <Dropdown.Item>All Projects</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item>Computer Science</Dropdown.Item>
-            <Dropdown.Item>Other projects</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+      <Menu.Item link as="a" href="/projects" >
+       Projects
       </Menu.Item>
 
-			<Menu.Item link as="a" href="/blog"> Blog </Menu.Item>
+      {/* <Menu.Item link as="a" href="/blog">
+        {" "}
+        Blog{" "}
+      </Menu.Item> */}
     </Menu>
   );
 };

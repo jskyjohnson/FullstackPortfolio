@@ -11,6 +11,7 @@ export const ContactPage = () => {
         Contact<span className="dot">.</span>
         <div className="line" />
       </Header>
+      <div className="h_contact_clone">Contact</div>
       <Contact />
     </div>
   );

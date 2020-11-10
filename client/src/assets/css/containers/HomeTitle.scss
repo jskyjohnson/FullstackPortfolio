@@ -6,6 +6,7 @@
   color: $body_headline_color;
   font-size: 15vw;
   line-height: 1.15;
+  transition: all 0.3 ease;
 
   @media #{$media_sm} {
     font-size: 6.13rem;
@@ -13,6 +14,33 @@
 
   .dot {
     color: $body_main_element_color;
+  }
+
+  .line {
+    width: 25vw;
+    height: 11vh;
+    z-index: -1;
+    position: relative;
+    top: -18vh;
+    left: 3vw;
+    background-color: $body_main_element_color;
+
+    @media #{$media_sm} {
+      width: 20vw;
+      height: 5vh;
+      top: -5vh;
+      left: 3vw;
+    }
+  }
+
+  &:hover {
+    //transform: perspective(1px) scale(1.1) translateZ(5) translateX(3vh) translateY(5vh);
+    transform: translateY(2vh) translateX(3vw);
+    transition: all 0.9 ease;
+
+    .line {
+      transform: perspective(0px) scale(1.2) translateY(-4vh) scaleX(1.3);
+    }
   }
 }
 
@@ -62,7 +90,7 @@
   margin-right: 5vh;
   width: 60%;
 
-  @media #{$media_md}{
+  @media #{$media_md} {
     width: 90%;
   }
 }

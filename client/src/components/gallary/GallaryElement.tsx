@@ -6,10 +6,9 @@ import { Header } from "semantic-ui-react";
 export interface GallaryElementProps {
   element: projectsTypes;
   filter: string;
-  key:number;
 }
 
-export const GallaryElement = ({ element, filter, key }: GallaryElementProps) => {
+export const GallaryElement = ({ element, filter }: GallaryElementProps) => {
 
 	let filtered = false;
   if (!(filter.includes(element.filter) || filter.includes("*"))) {
@@ -18,7 +17,7 @@ export const GallaryElement = ({ element, filter, key }: GallaryElementProps) =>
 		filtered = false;
 	}
   return (
-    <a key={key} className={"gallery_element " +( (!filtered)? "enable" : "disable")} title={element.title} href={"/projects/" + element.id}>
+    <a key={element.id} className={"gallery_element " +( (!filtered)? "enable" : "disable")} title={element.title} href={"/projects/" + element.id}>
       <div className="element_fit">
         <div className="element_image_cover">
           <img className="element_image" src={element.thumbnail} />

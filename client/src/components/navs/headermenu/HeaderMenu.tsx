@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu, Container, Dropdown } from "semantic-ui-react";
+import "assets/css/components/Navs.scss";
 
 const menuStyle = {
   border: "none",
@@ -25,21 +26,13 @@ export const HeaderMenu = () => {
       <Menu.Item link as="a" href="/contact" active={active === "/contact"}>
         Contact
       </Menu.Item>
-      <Menu.Item style={projectsMenuStyle} active={active.startsWith("/projects")} >
-        <Dropdown text="Projects" className="item link">
-          <Dropdown.Menu>
-            <Dropdown.Item>All Projects</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item>Computer Science</Dropdown.Item>
-            <Dropdown.Item>Other projects</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+      <Menu.Item link as="a" href="/projects" active={active === "/projects"}>
+        Projects
       </Menu.Item>
 
-      <Menu.Item link as="a" href="/blog" active={active.startsWith("/blog")}>
-        {" "}
-        Blog{" "}
-      </Menu.Item>
+      {/* <Menu.Item link as="a" href="/blog" active={active.startsWith("/blog")}>
+        Blog
+      </Menu.Item> */}
     </Menu>
   );
 };

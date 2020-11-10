@@ -6,6 +6,7 @@ import { page404 } from "pages/404";
 import { ContactPage } from "pages/ContactPage";
 import { PageHeader } from "components/pageheader/PageHeader";
 import { Footer } from "components/footer/Footer";
+import { ProjectsPage } from "pages/ProjectsPage";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
             exact
             path={`${process.env.PUBLIC_URL + "/contact"}`}
             component={ContactPage}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + "/projects"}`}
+            component={ProjectsPage}
           />
           <Route exact component={page404} />
         </Switch>

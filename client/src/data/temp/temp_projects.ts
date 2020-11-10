@@ -68,27 +68,3 @@ export const temp_projectsInfo: projectsTypes[] = [
     thumbnail: "./placeholder/1113x510.jpg",
   },
 ];
-
-export interface projectsMenu {
-  id: number;
-  title: string;
-  filter: string;
-}
-
-export const temp_projectsMenuInfo: projectsMenu[] = [
-  {
-    id: 1,
-    title: "All",
-    filter: "*",
-  },
-  {
-    id: 2,
-    title: "Photography",
-    filter: "photo",
-  },
-  {
-    id: 3,
-    title: "Computer Science",
-    filter: "cs",
-  },
-];

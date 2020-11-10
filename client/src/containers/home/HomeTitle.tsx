@@ -11,12 +11,12 @@ import { shuffleArray } from "utils/shuffleArray";
 const slick_settings = {
   dots: false,
   infinite: true,
-  speed: 1000,
+  speed: 2000,
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 4000,
   fade: true,
 };
 
@@ -29,6 +29,7 @@ export const HomeTitle = () => {
           <Header as="h1" className="h_intro">
             {homepageinfo.hero_intro}
             <span className="dot">.</span>
+            <div className="line" />
           </Header>
 
           <div className="h_intro_clone">{homepageinfo.hero_intro}</div>

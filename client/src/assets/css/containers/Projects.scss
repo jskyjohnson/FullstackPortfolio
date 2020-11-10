@@ -34,7 +34,7 @@ h2.ui.header.works_header {
 }
 
 .seemore_header {
-  margin: 2vh 5vw 2vh 10vw;
+  margin: 5vh 5vw 2vh 10vw;
   text-align: right;
 
   h3 {
@@ -44,12 +44,12 @@ h2.ui.header.works_header {
   }
 
   .line {
-    width: 6vw;
+    width: 8vw;
     height: 2vh;
     z-index: -1;
     position: relative;
     top: -3vh;
-    left: 85%;
+    left: 87%;
     background-color: $body_main_element_color;
   }
 

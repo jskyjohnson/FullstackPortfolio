@@ -1,21 +1,29 @@
 @import "../variables";
 
 //Gallery Menu content
-div.eight.wide.column.gallery_menu {
-  justify-content: center;
-  display: flex;
-}
+// div.eight.wide.column.gallery_menu {
+//   justify-content: center;
+//   display: flex;
+// }
 //  div.ui.huge.compact.text.menu button.ui.button.item.gallary_menu_item
 div.ui.huge.compact.text.menu button.ui.button.item.gallery_menu_item {
   //   white-space: "nowrap";
   padding: 4vh 2vw;
   transition: all 0.3s ease;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: $font_primary;
   text-transform: uppercase;
+  text-align: center;
 
   @media #{$media_sm} {
+    font-size: 1.5rem;
+    padding: 1.5vh 1vw;
+  }
+
+  @media #{$media_md}{
     font-size: 1rem;
+    padding: 1.5vh .5vw;
+    text-align: left;
   }
 
   &:hover {
