@@ -17,7 +17,7 @@ export const GallaryElement = ({ element, filter }: GallaryElementProps) => {
 		filtered = false;
 	}
   return (
-    <a key={element.id} className={"gallery_element " +( (!filtered)? "enable" : "disable")} title={element.title} href={"/projects/" + element.id}>
+    <a key={element.id} className={"gallery_element " +( (!filtered)? "enable" : "disable")} title={element.title} href={"/project-item/?id=" + element.id}>
       <div className="element_fit">
         <div className="element_image_cover">
           <img className="element_image" src={element.thumbnail} />
