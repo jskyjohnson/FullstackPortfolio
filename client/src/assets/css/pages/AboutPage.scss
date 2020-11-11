@@ -1,6 +1,6 @@
 @import "../variables";
 
-h2.ui.header.projects_header {
+h2.ui.header.about_header {
   margin: 3vh 0vw 3vh 8vw;
   font-family: $font_secondary_bold;
   color: $body_headline_color;
@@ -27,7 +27,7 @@ h2.ui.header.projects_header {
     height: 4vh;
     z-index: -1;
     position: relative;
-    top: -10vh;
+    top: -12vh;
     left: 2%;
     background-color: $body_main_element_color;
     @media #{$media_sm} {
@@ -38,7 +38,7 @@ h2.ui.header.projects_header {
   }
 }
 
-.h_projects_clone {
+.h_about_clone {
   font-family: $font_secondary_bold;
   color: $body_text_clone_color;
   position: absolute;
@@ -57,4 +57,52 @@ h2.ui.header.projects_header {
     bottom: 0rem;
     font-size: 13rem;
   }
+}
+
+.ui.header.about_subtitle {
+  font-size: 2rem;
+  font-family: $font_primary;
+}
+
+.ui.header.about_name {
+  font-size: 4rem;
+  font-family: $font_secondary_bold;
+}
+
+.ui.header.about_description_header {
+  font-size: 2.1rem;
+  font-family: $font_secondary_bold;
+  text-transform: capitalize;
+}
+div.column div p.about_description_p {
+  font-size: 1rem !important;
+  margin: 0.5vh 0;
+}
+
+span.about_span {
+  font-size: 1.1rem;
+  font-family: $font_secondary_bold;
+  text-transform: capitalize;
+}
+
+div.five.wide.column div p{
+  margin: .5vh 0;
+}
+
+div p.about_info_p {
+  margin: 0.5vh 0;
+  font-size: 1rem !important;
+}
+
+h3.ui.header.about_subsection_title {
+  font-size: 1.7rem;
+  font-family: $font_secondary_bold;
+  text-transform: capitalize;
+}
+
+h3.ui.header.about_softwares_headers {
+  font-size: 1.3rem;
+  font-family: $font_primary;
+  text-transform: capitalize;
+  margin: 1vh 0 0 0 ;
 }

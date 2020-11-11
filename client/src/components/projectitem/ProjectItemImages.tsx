@@ -3,7 +3,7 @@ import { Container, Image } from "semantic-ui-react";
 
 
 export const ProjectItemImages = ({ ...images }: { images: string[] }) => {
-  images.images.map((value) => console.log(value));
+  //images.images.map((value) => console.log(value));
   return (
     <Container>
       {images.images.map((value: string, key: number) => (

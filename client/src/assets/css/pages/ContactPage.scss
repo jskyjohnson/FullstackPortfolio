@@ -27,11 +27,11 @@ h2.ui.header.contact_header {
     height: 4vh;
     z-index: -1;
     position: relative;
-    top: -6vh;
+    top: -10vh;
     left: 2%;
     background-color: $body_main_element_color;
     @media #{$media_sm} {
-      top: -3vh;
+      top: -4vh;
       width: 20vw;
       height: 2vh;
     }

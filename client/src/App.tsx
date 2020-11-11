@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "pages/Home";
-import { About } from "pages/About";
+import { AboutPage } from "pages/AboutPage";
 import { page404 } from "pages/404";
 import { ContactPage } from "pages/ContactPage";
 import { PageHeader } from "components/pageheader/PageHeader";
@@ -22,7 +22,7 @@ function App() {
           <Route
             exact
             path={`${process.env.PUBLIC_URL + "/about"}`}
-            component={About}
+            component={AboutPage}
           />
           <Route
             exact

@@ -86,15 +86,17 @@ export const Skills = () => {
       </Grid>
 
       <Header as="h5" className="skills_hireme" textAlign="center">
-        I'm avaible to hire! For web development, photography, and graphic
-        design.
+        I'm avaible for hire!
+        <p>
+          For Web Development, Software Development, and Graphic Design.
+        </p>
       </Header>
 
-      <div className="skill_contactbtnspacer">
+      {/* <div className="skill_contactbtnspacer">
         <a href="/contact" className="skill_contactbutton">
           Contact Me
         </a>
-      </div>
+      </div> */}
     </Container>
   );
 };
