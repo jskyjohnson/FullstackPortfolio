@@ -7,7 +7,7 @@ import { ContactPage } from "pages/ContactPage";
 import { PageHeader } from "components/pageheader/PageHeader";
 import { Footer } from "components/footer/Footer";
 import { ProjectsPage } from "pages/ProjectsPage";
-import { ProjectItem } from "pages/ProjectItem";
+import { ProjectItemPage } from "pages/ProjectItemPage";
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
           />
           <Route
             path={`${process.env.PUBLIC_URL + "/project-item"}`}
-            component={ProjectItem}
+            component={ProjectItemPage}
           />
           <Route exact component={page404} />
         </Switch>

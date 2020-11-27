@@ -25,20 +25,16 @@ export const ProjectItem = () => {
     // <div>
     // 	<img src="https://i.imgur.com/PHM1Li1.jpg" />
     // </div>
-    <Container>
-      <Grid stackable>
-        <Grid.Row>
-          <Grid.Column width="10">
-            <ProjectItemImages images={images} />
+    <>
+      <Grid.Column width="10">
+        <ProjectItemImages images={images} />
 
-            {/* <img src={"/placeholder/" + images[0]} /> */}
-          </Grid.Column>
+        {/* <img src={"/placeholder/" + images[0]} /> */}
+      </Grid.Column>
 
-          <Grid.Column width="6">
-            <ProjectItemDetails project={project} />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Container>
+      <Grid.Column width="6">
+        <ProjectItemDetails project={project} />
+      </Grid.Column>
+    </>
   );
 };

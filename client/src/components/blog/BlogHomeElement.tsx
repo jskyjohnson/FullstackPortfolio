@@ -4,16 +4,6 @@ import { Card, Grid, Image } from "semantic-ui-react";
 
 import "assets/css/components/BlogHome.scss";
 
-/* export interface blogPostTypes {
-  id: number;
-	title: string;
-	date: Date;
-	category: string;
-	categoryLink: string;
-  thumbnail: string;
-} 
-*/
-
 export const BlogHomeElement = ({ ...props }: blogPostTypes) => {
   return (
     <Card className="blog_home_element" href={"blog/" + props.id}>
@@ -28,14 +18,5 @@ export const BlogHomeElement = ({ ...props }: blogPostTypes) => {
 
       <Card.Content extra>{props.date.toDateString()}</Card.Content>
     </Card>
-
-    // <Card>
-    //   <Card
-    //     image={props.thumbnail}
-    //     header={props.title}
-    //     meta={props.category}
-    //     extra={props.date}
-    //   />
-    // </Card>
   );
 };
