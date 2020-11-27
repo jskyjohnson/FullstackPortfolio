@@ -1,10 +1,12 @@
-import { temp_blogPosts } from "data/temp/temp_blogs";
 import React from "react";
 import { Card, Container, Grid, Header } from "semantic-ui-react";
 
 import { BlogHomeElement } from "components/blog/BlogHomeElement";
+import { getBlogPosts } from "utils/dataClient";
 
 export const BlogsHome = () => {
+  let temp_blogPosts = getBlogPosts();
+
   return (
     <div className="home_blog">
       <Header as="h3" className="blogging_header">

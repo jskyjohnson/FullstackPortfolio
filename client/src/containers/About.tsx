@@ -1,10 +1,11 @@
-import { userinfo } from "data/userinfo";
 import React from "react";
 import { Container, Divider, Grid, Header, Image } from "semantic-ui-react";
 
 import "assets/css/pages/AboutPage.scss";
+import { getUserData } from "utils/dataClient";
 
 export const About = () => {
+  let userinfo = getUserData();
   return (
     <Container>
       <Grid stackable>

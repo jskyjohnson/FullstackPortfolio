@@ -1,10 +1,10 @@
-export interface projectsMenu {
+export interface projectsMenuType {
   id: number;
   title: string;
   filter: string;
 }
 
-export const temp_projectsMenuInfo: projectsMenu[] = [
+export const temp_projectsMenuInfo: projectsMenuType[] = [
   {
     id: 1,
     title: "All",

@@ -1,7 +1,7 @@
 import React from "react";
-import { socialsinfo } from "data/socialsinfo";
 import { Grid, GridRowProps, Icon } from "semantic-ui-react";
 import { IconSizeProp } from "semantic-ui-react/dist/commonjs/elements/Icon/Icon";
+import { getSocialMediaInfo } from "utils/dataClient";
 
 export interface SocialsProps {
   children?: React.ReactElement;
@@ -18,6 +18,8 @@ const defaultProps = {
 
 export const Socials = (props: SocialsProps) => {
   const d_props = Object.assign(defaultProps, props);
+
+  let socialsinfo = getSocialMediaInfo()
 
   const rowStyle = {
     justifyContent: d_props.align,

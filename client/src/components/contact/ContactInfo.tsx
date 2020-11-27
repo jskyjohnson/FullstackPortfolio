@@ -1,8 +1,11 @@
 import React from "react";
 import "assets/css/containers/Contact.scss";
-import { userinfo } from "data/userinfo";
+import { getUserData } from "utils/dataClient";
 
 export const ContactInfo = () => {
+
+  let userinfo = getUserData();
+
   return (
     <ul>
       {/* {userinfo.contact} */}

@@ -3,9 +3,12 @@ import React from "react";
 import { Grid } from "semantic-ui-react";
 
 import "assets/css/components/Footer.scss";
-import { userinfo } from "data/userinfo";
+import { getUserData } from "utils/dataClient";
 
 export const Footer = () => {
+
+  let userinfo = getUserData();
+
   return (
     <div>
       <Grid columns={2} className="footer" stackable>

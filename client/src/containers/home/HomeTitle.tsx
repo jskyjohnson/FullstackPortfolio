@@ -2,11 +2,11 @@ import React from "react";
 import { Grid, Header, Image, Segment } from "semantic-ui-react";
 import placeholderimage from "assets/image/placeholder/527x600.jpg";
 import { userInfoFill } from "utils/userInfoFill";
-import { homepageinfo } from "data/homepageinfo";
 import Slider from "react-slick";
 import "assets/css/containers/HomeTitle.scss";
 import "slick-carousel/slick/slick.scss";
 import { shuffleArray } from "utils/shuffleArray";
+import { getHomePageInfo } from "utils/dataClient";
 
 const slick_settings = {
   dots: false,
@@ -21,6 +21,7 @@ const slick_settings = {
 };
 
 export const HomeTitle = () => {
+  let homepageinfo = getHomePageInfo();
   const r_carousel_text = shuffleArray(homepageinfo.carousel_text_values);
   return (
     <Grid columns={2}>

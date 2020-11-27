@@ -1,25 +1,20 @@
+//import { Logo } from "components/header/logo/Logo";
+import "assets/css/components/PageHeader.scss";
+import { HeaderMenu } from "components/navs/headermenu/HeaderMenu";
+import { Logo } from "components/navs/logo/Logo";
+import { SideMenu } from "components/navs/sidemenu/SideMenu";
+import { Socials } from "components/navs/socials/Socials";
 import React, { useState } from "react";
 import {
   Button,
   Container,
-  Dropdown,
   Grid,
   GridColumn,
   GridRow,
-  Header,
-  Icon,
-  Menu,
-  Segment,
   Sidebar,
   SidebarPushable,
   SidebarPusher,
 } from "semantic-ui-react";
-import { HeaderMenu } from "components/navs/headermenu/HeaderMenu";
-import { Logo } from "components/navs/logo/Logo";
-import { Socials } from "components/navs/socials/Socials";
-//import { Logo } from "components/header/logo/Logo";
-import "assets/css/components/PageHeader.scss";
-import { SideMenu } from "components/navs/sidemenu/SideMenu";
 
 type PageProp = {
   children?: React.ReactNode;
@@ -70,9 +65,15 @@ export const PageHeader = ({ children }: PageProp) => {
 
         <SidebarPusher dimmed={visible}>
           <Container>
-            <Grid className="page_header_main"  verticalAlign="middle">
+            <Grid className="page_header_main" verticalAlign="middle">
               <Grid.Row>
-                <GridColumn computer={4} tablet={7} mobile={8} textAlign="left" floated="left">
+                <GridColumn
+                  computer={4}
+                  tablet={7}
+                  mobile={8}
+                  textAlign="left"
+                  floated="left"
+                >
                   <Logo />
                 </GridColumn>
 

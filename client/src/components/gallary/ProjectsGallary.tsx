@@ -1,19 +1,9 @@
-import { projectsTypes, temp_projectsInfo } from "data/temp/temp_projects";
-import React, { useState } from "react";
-import Masonry from "react-masonry-component";
-import {
-  Button,
-  Container,
-  Grid,
-  GridColumn,
-  Image,
-  Menu,
-  SemanticWIDTHS,
-} from "semantic-ui-react";
-
 import "assets/css/components/ProjectsGallery.scss";
+import { projectsTypes } from "data/temp/temp_projects";
+import React, { useState } from "react";
+import { Button, Container, Menu } from "semantic-ui-react";
+import { getProjectInfo, getProjectMenuInfo } from "utils/dataClient";
 import { GallaryElement } from "./GallaryElement";
-import { temp_projectsMenuInfo } from "data/projectsMenuInfo";
 
 const masonryOptions = {
   transitionDuration: 0,
@@ -26,8 +16,8 @@ const menuStyle = {
 };
 
 export const ProjectsGallary = ({ limit }: { limit?: number }) => {
-  const projectData = temp_projectsInfo;
-  const projectMenuData = temp_projectsMenuInfo;
+  const projectData = getProjectInfo();
+  const projectMenuData = getProjectMenuInfo();
 
   const [filter, setFilter] = useState("*");
 

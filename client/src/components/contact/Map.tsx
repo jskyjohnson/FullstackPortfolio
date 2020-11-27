@@ -1,9 +1,10 @@
-import { userinfo } from "data/userinfo";
 import React from "react";
 
 import "assets/css/containers/Contact.scss";
+import { getUserData } from "utils/dataClient";
 
 export const Map = () => {
+  let userinfo = getUserData();
   return (
     <div className="contact_map">
       <iframe

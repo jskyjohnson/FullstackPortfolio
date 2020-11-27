@@ -1,11 +1,12 @@
 import { ProjectItemDetails } from "components/projectitem/ProjectItemDetails";
 import { ProjectItemImages } from "components/projectitem/ProjectItemImages";
-import { projectsTypes, temp_projectsInfo } from "data/temp/temp_projects";
+import { projectsTypes } from "data/temp/temp_projects";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { Container, Grid, Image } from "semantic-ui-react";
 
 import "assets/css/components/ProjectItems.scss";
+import { getProjectInfo } from "utils/dataClient";
 
 export const ProjectItem = () => {
   const id = new URLSearchParams(useLocation().search).get("id");
@@ -14,7 +15,8 @@ export const ProjectItem = () => {
   let details;
 
   if (id != null) {
-    project = temp_projectsInfo.filter((project) => project.id === +id)[0];
+		//TODO make get project info to filter for specific ID and return that too.
+    project = getProjectInfo().filter((project) => project.id === +id)[0];
 
     images = project.images;
   } else {
