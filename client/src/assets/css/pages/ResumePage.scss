@@ -1,0 +1,80 @@
+@import "../variables";
+
+h2.ui.header.resume_header {
+  margin: 3vh 0vw 3vh 8vw;
+  font-family: $font_secondary_bold;
+  color: $body_headline_color;
+  font-size: 10rem;
+  text-align: left;
+
+  @media #{$media_sm} {
+    font-size: 5rem;
+  }
+
+  &:hover {
+    transform: perspective(1px) scale(1.1) translateX(5vh);
+    .line {
+      transform: perspective(3px) scale(1.5);
+    }
+  }
+
+  .dot {
+    color: $body_main_element_color;
+  }
+
+  .line {
+    width: 20vw;
+    height: 4vh;
+    z-index: -1;
+    position: relative;
+    top: -12vh;
+    left: 2%;
+    background-color: $body_main_element_color;
+    @media #{$media_sm} {
+      top: -4vh;
+      width: 20vw;
+      height: 2vh;
+    }
+  }
+}
+
+.h_resume_clone {
+  font-family: $font_secondary_bold;
+  color: $body_text_clone_color;
+  position: absolute;
+  z-index: -5;
+  line-height: 77%;
+  font-size: 12vw;
+  left: 15vw;
+  top: 20vh;
+
+  // @media #{$media_xxl} {
+  //   font-size: 29.411764705882355vw;
+  // }
+
+  @media #{$media_sm} {
+    right: 4rem;
+    bottom: 0rem;
+    font-size: 13rem;
+  }
+}
+
+canvas {
+  padding: 0;
+  margin: auto;
+  padding-top: 2rem;
+  width: 80vw;
+  height: auto;
+}
+
+.ui.button.resume_download_button{
+  display: block;
+  margin: auto;
+  border-radius: 0;
+  background: black;
+  font-family: $font_secondary_bold;
+  
+  a{
+    color: white;
+  }
+}

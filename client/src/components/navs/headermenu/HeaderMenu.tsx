@@ -29,6 +29,9 @@ export const HeaderMenu = () => {
       <Menu.Item link as="a" href="/projects" active={active === "/projects"}>
         Projects
       </Menu.Item>
+      <Menu.Item link as="a" href="/resume" active={active === "/resume"}>
+        Resume
+      </Menu.Item>
 
       {/* <Menu.Item link as="a" href="/blog" active={active.startsWith("/blog")}>
         Blog

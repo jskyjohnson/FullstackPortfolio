@@ -23,6 +23,9 @@ export const SideMenu = () => {
       <Menu.Item link as="a" href="/projects" >
        Projects
       </Menu.Item>
+      <Menu.Item link as="a" href="/resume" >
+       Resume
+      </Menu.Item>
 
       {/* <Menu.Item link as="a" href="/blog">
         {" "}
