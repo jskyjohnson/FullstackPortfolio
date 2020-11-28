@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Header, Image, Segment } from "semantic-ui-react";
 import placeholderimage from "assets/image/placeholder/527x600.jpg";
-import { userInfoFill } from "../../utils/userInfoFill";
+import { userInfoFill } from "utils/userInfoFill";
 import Slider from "react-slick";
 import "assets/css/containers/HomeTitle.scss";
 import "slick-carousel/slick/slick.scss";
