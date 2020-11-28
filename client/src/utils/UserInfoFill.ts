@@ -1,5 +1,7 @@
 import {userinfo} from 'data/userinfo'
 
+//test
+
 export const userInfoFill = (str: string, repl_string?: string) => {
   if (repl_string) {
     const re = new RegExp("%userinfo%", "g");
