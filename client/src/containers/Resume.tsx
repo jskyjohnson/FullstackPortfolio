@@ -12,7 +12,7 @@ export const Resume = () => {
   return (
     <Container>
       <Document file={resume}>
-        <Page pageNumber={1} renderTextLayer={false} />
+        <Page pageNumber={1} renderTextLayer={false}  width={1000}/>
       </Document>
       <Button className="resume_download_button">
         <a href="resume.pdf" download="Johnson_Sky_Resume.pdf">
