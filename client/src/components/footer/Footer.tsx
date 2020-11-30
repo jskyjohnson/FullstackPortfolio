@@ -1,4 +1,4 @@
-import { Socials } from "components/navs/socials/Socials";
+import { Socials } from "components/socials/Socials";
 import React from "react";
 import { Grid } from "semantic-ui-react";
 
@@ -15,6 +15,7 @@ export const Footer = () => {
         <Grid.Row>
           <Grid.Column className="copyright">
 						{userinfo.footerMessage}
+            <p>Like this site? Checkout my <a href="https://github.com/jskyjohnson/public_portfolio">sourcecode!</a></p>
 					</Grid.Column>
           <Grid.Column className="footerSocials">
             <Socials size="big" align="center"/>

@@ -66,7 +66,7 @@ export const userinfo: userinfoType = {
     ],
   },
   about: {
-    about_pic: "./placeholder/637x637.jpg",
+    about_pic: "user/aboutme.jpg",
     about_header_message: "A passionate developer, artist, and photographer",
     bios: [
       ["background", "something something", "test test test"],

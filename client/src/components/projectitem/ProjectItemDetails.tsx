@@ -24,10 +24,14 @@ export const ProjectItemDetails = ({
         {pr.title}
       </Header>
 
-      <Header as="h2" className="project_category">
-        {" "}
+      <Header as="h2" className="project_subtitle">
+        {pr.subtitle}
+      </Header>
+
+      <Header as="h3" className="project_category">
         {pr.category}
       </Header>
+
       {pr.description.map((e) => (
         <div>
           {e[0] ? (

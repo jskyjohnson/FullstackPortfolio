@@ -8,8 +8,8 @@ export const ContactAvailability = () => {
 
   return (
     <>
-      {userinfo.contact.contactMessage.map((value) => (
-        <p>{value}</p>
+      {userinfo.contact.contactMessage.map((value, key) => (
+        <p key={key}>{value}</p>
       ))}
     </>
   );

@@ -23,14 +23,14 @@ html body div#root div.pushable div.ui.grid.overlay.right.wide.visible.sidebar.s
 
 .vertical > a, div, div.ui.borderless.fluid.vertical.menu a.link.item{
 	font-family: $font_secondary_bold;
-	color: $menu_primary_links_hover_color;
+	color: $body_links_hover_color;
 }
 
 //Menu colors for normal nav
 div.ui.borderless.pointing.secondary.five.item.menu a.link.item, div.ui.borderless.pointing.secondary.five.item.menu div.item, div.ui.dropdown.link.item div.divider.text{
 	font-family: $font_secondary;
 	font-size: 1.2rem;
-	color: $menu_primary_links_hover_color;
+	color: $body_links_hover_color;
 }
 
 div.row:nth-child(3) > div{

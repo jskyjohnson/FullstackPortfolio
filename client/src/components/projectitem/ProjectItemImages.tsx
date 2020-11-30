@@ -7,7 +7,7 @@ export const ProjectItemImages = ({ ...images }: { images: string[] }) => {
   return (
     <Container>
       {images.images.map((value: string, key: number) => (
-        <Image key={key} src={value} fluid className="project_image"/>
+        <Image key={key} src={require(`assets/images/${value}`).default} fluid className="project_image"/>
       ))}
     </Container>
   );

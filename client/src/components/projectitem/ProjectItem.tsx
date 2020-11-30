@@ -24,14 +24,9 @@ export const ProjectItem = () => {
   }
 
   return (
-    // <div>
-    // 	<img src="https://i.imgur.com/PHM1Li1.jpg" />
-    // </div>
     <>
       <Grid.Column width="10">
         <ProjectItemImages images={images} />
-
-        {/* <img src={"/placeholder/" + images[0]} /> */}
       </Grid.Column>
 
       <Grid.Column width="6">

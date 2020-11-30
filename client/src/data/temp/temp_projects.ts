@@ -1,6 +1,7 @@
 export interface projectsTypes {
   id: number;
   title: string;
+  subtitle: string;
   category: string;
   filter: string;
   thumbnail: string;
@@ -14,9 +15,10 @@ export const temp_projectsInfo: projectsTypes[] = [
   {
     id: 1,
     title: "Sample Project 1",
+    subtitle: "a test project",
     category: "Software Project",
     filter: "software",
-    thumbnail: "/placeholder/527x500.jpg",
+    thumbnail: "placeholder/527x500.jpg",
     date: new Date("10, 1, 2019"),
     description: [
       ["", "This is a sample description"],
@@ -27,9 +29,9 @@ export const temp_projectsInfo: projectsTypes[] = [
       ["", "test hello"],
     ],
     images: [
-      "/placeholder/527x500.jpg",
-      "/placeholder/637x637.jpg",
-      "/placeholder/966x560.jpg",
+      "placeholder/527x500.jpg",
+      "placeholder/637x637.jpg",
+      "placeholder/966x560.jpg",
     ],
     meta: {
       "itch.io": "https://colinlanphear.itch.io/fantasy-cleanup-corp",

@@ -9,12 +9,20 @@
 	padding: 0 0 0 1vw;
 }
 
-h2.ui.header.project_category {
+h2.ui.header.project_subtitle {
 	font-size: 1.5rem;
-	text-transform: lowercase;
+	text-transform: capitalize;
 	padding: 0 0 0 1vw;
 	color: $body_text_secondary_color;
 	font-family: $font_primary;
+	margin-top: 0;
+}
+
+h3.ui.header.project_category {
+	font-size: 1.2rem;
+	text-transform: lowercase;
+	padding: 0 0 0 0vw;
+	font-family: $font_secondary;
 	margin-top: 0;
 }
 

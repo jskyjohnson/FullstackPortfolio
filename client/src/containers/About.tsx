@@ -18,7 +18,7 @@ export const About = () => {
           <Grid stackable columns={2}>
             <Grid.Row>
               <Grid.Column>
-                <Image src={userinfo.about.about_pic} fluid />
+                <Image src={require(`assets/images/${userinfo.about.about_pic}`).default} fluid />
                 {/* <Image src="./placeholder/527x500.jpg" /> */}
               </Grid.Column>
               <Grid.Column>

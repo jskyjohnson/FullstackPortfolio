@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid, Header, Image, Segment } from "semantic-ui-react";
-import placeholderimage from "assets/image/placeholder/527x600.jpg";
 import { userInfoFill } from "utils/userInfoFill";
 import Slider from "react-slick";
 import "assets/css/containers/HomeTitle.scss";
@@ -55,10 +54,11 @@ export const HomeTitle = () => {
         verticalAlign="bottom"
         textAlign="right"
       >
-        <Image
+
+        <Image as="img"
           className="img_portrait"
           spaced={"left"}
-          src={placeholderimage}
+          src={require(`assets/images/user/${homepageinfo.hero_portrait}`).default}
         />
       </Grid.Column>
     </Grid>

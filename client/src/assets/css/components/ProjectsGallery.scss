@@ -141,7 +141,7 @@ div.ui.huge.compact.text.menu button.ui.button.item.gallery_menu_item {
         h3 {
 					font-size: 3rem;
 					font-family: $font_secondary_bold;
-          color: $gallery_item_text_color;
+          color: $body_background_color;
           line-height: 1.18;
 					margin-bottom: 0;
 					
@@ -151,7 +151,7 @@ div.ui.huge.compact.text.menu button.ui.button.item.gallery_menu_item {
         }
 
         span {
-          color: $gallery_item_text_color;
+          color: $body_background_color;
           position: absolute;
           bottom: 5vh;
           right: 5vw;

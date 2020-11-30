@@ -27,10 +27,6 @@ export const ProjectsGallary = ({ limit }: { limit?: number }) => {
 
   return (
     <div>
-      {/* <p>testing...</p>
-      <img src={plcimage} /> */}
-      {/* Menu Object */}
-
       <Container className="gallery_menu" fluid>
         <Menu text compact size="huge" stackable>
           {projectMenuData.map((item) => (
@@ -52,12 +48,7 @@ export const ProjectsGallary = ({ limit }: { limit?: number }) => {
       <div className="gallery">
         <div className="gallery_elements">
           {projectData.map((project: projectsTypes, key: number) => (
-            // {if(limit:number|undefined){
-
-            // }else{
-
-            // }}
-            <GallaryElement element={project} filter={filter} />
+            <GallaryElement key={key} element={project} filter={filter} />
           ))}
         </div>
       </div>

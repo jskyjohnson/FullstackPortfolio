@@ -9,7 +9,6 @@ export interface inputTypes{
 }
 
 export const Input = ({type, name, id, placeholder}:inputTypes ) => {
-	console.log(type);
 	return (
 		type === 'textarea'? (
 			<textarea id={id} name={name} placeholder={placeholder} />

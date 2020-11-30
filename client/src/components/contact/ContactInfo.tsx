@@ -15,8 +15,8 @@ export const ContactInfo = () => {
           {userinfo.contact.email}
         </a>
       </li>
-      {userinfo.contact.services.map((value) => (
-        <li>
+      {userinfo.contact.services.map((value, key) => (
+        <li key={key}>
           <span>{value.app}</span>
           <a href={value.profileUrl}>{value.account}</a>
         </li>

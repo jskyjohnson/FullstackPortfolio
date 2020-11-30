@@ -3,7 +3,7 @@ import "assets/css/components/PageHeader.scss";
 import { HeaderMenu } from "components/navs/headermenu/HeaderMenu";
 import { Logo } from "components/navs/logo/Logo";
 import { SideMenu } from "components/navs/sidemenu/SideMenu";
-import { Socials } from "components/navs/socials/Socials";
+import { Socials } from "components/socials/Socials";
 import React, { useState } from "react";
 import {
   Button,
