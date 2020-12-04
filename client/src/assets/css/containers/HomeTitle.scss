@@ -18,10 +18,10 @@
 
   .line {
     width: 25vw;
-    height: 11vh;
+    height: 8vh;
     z-index: -1;
     position: relative;
-    top: -18vh;
+    top: -12vh;
     left: 3vw;
     background-color: $body_main_element_color;
 
@@ -39,7 +39,7 @@
     transition: all 0.9 ease;
 
     .line {
-      transform: perspective(0px) scale(1.2) translateY(-4vh) scaleX(1.3);
+      transform: perspective(0px) scale(1.2) translateY(-2vh) scaleX(1.3);
     }
   }
 }
