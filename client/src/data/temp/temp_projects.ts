@@ -44,11 +44,11 @@ export const temp_projectsInfo: projectsTypes[] = [
   },
   {
     id: 2,
-    title: "Sample Project 1",
-    subtitle: "a test project",
+    title: "Training GANs on Human Contact Networks",
+    subtitle: "A Network Analysis Project",
     category: "Software Project",
     filter: "software",
-    thumbnail: "placeholder/527x500.jpg",
+    thumbnail: "projects/Software/HumanContactNetworksWithGans/hcnganthumb.jpg",
     date: new Date("10, 1, 2019"),
     description: [
       ["", "This is a sample description"],
