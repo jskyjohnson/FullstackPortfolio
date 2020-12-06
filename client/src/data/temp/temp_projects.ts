@@ -225,7 +225,7 @@ export const temp_projectsInfo: projectsTypes[] = [
     title: "Bit Overflow Music Generating Sound Box",
     subtitle: "A Code Golf inspired soundbox",
     category: "Software Project",
-    filter: "software",
+    filter: "physical",
     thumbnail: "projects/Physical/SoundBox/musicbox_thumb.png",
     date: new Date("4, 15, 2019"),
     description: [
