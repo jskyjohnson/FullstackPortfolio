@@ -4,9 +4,8 @@ import express from "express";
 import { ApolloServer } from "apollo-server-express";
 
 import { buildSchema } from "type-graphql";
-import { HelloWorldResolver } from "./resolvers/HelloWorldResolver";
-import { MovieResolver } from "./resolvers/MovieResolver";
 import { UserResolver } from "./resolvers/UserResolver";
+import { SampleCRUDPostResolver } from "./resolvers/SampleCRUDPostResolver";
 
 require("dotenv").config();
 
@@ -30,13 +29,13 @@ require("dotenv").config();
 
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [UserResolver],
+      resolvers: [UserResolver, SampleCRUDPostResolver],
     }),
     context: ({ req, res }) => ({ req, res }),
   });
 
   server.applyMiddleware({ app, cors: false });
-
+  
   app.listen({ port: 4000 }, () =>
     console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
   );

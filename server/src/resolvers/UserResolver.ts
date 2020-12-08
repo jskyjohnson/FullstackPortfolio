@@ -13,6 +13,7 @@ import { hash, compare } from "bcryptjs";
 import { User } from "../entity/User";
 import { isAuth } from "../isAuth";
 import { MyContext } from "../MyContext";
+require("dotenv").config();
 
 @ObjectType()
 class LoginResponse {
@@ -70,8 +71,8 @@ export class UserResolver {
     }
 
     return {
-      accessToken: sign({ userId: user.id }, "MySecretKey", {
-        expiresIn: "15m"
+      accessToken: sign({ userId: user.id }, process.env.secret!, {
+        expiresIn: "60m"
       })
     };
   }
