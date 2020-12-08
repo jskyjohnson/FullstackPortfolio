@@ -1,34 +1,30 @@
 {
-  "name": "server",
-  "version": "0.1.0",
-  "description": "backend graphql data server",
-  "main": "server.ts",
-  "scripts": {
-    "watch": "tsc -w",
-    "dev": "nodemon dist/server.js",
-    "start": "node dist/server.js",
-    "nostart": "ts-node src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": {
-    "name": "Sky Johnson",
-    "email": "jsky.johnson@gmail.com",
-    "url": "https://skyjohnson.me",
-    "github": "jskyjohnson"
-  },
-  "license": "SEE LICENSE IN ROOT",
-  "dependencies": {
-    "apollo-server-express": "^2.18.2",
-    "argon2": "^0.27.0",
-    "class-validator": "^0.12.2",
-    "reflect-metadata": "^0.1.13",
-    "ts-node": "^9.0.0",
-    "type-graphql": "^1.1.0",
-    "typescript": "^4.0.5",
-    "uuid": "^8.3.1"
-  },
-  "devDependencies": {
-    "eslint": "^7.12.1"
-  }
+   "name": "apollo-typescript-postgres-server-boilerplate",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "devDependencies": {
+      "@types/express": "^4.17.9",
+      "@types/graphql": "^14.5.0",
+      "@types/node": "^14.14.10",
+      "ts-node": "9.1.1",
+      "typescript": "4.1.2"
+   },
+   "dependencies": {
+      "apollo-server-express": "^2.19.0",
+      "class-validator": "^0.12.2",
+      "cors": "^2.8.5",
+      "dotenv": "^8.2.0",
+      "express": "^4.17.1",
+      "graphql": "^15.4.0",
+      "pg": "^8.5.1",
+      "reflect-metadata": "^0.1.13",
+      "type-graphql": "^1.1.1",
+      "typeorm": "0.2.29"
+   },
+   "scripts": {
+      "watch": "tsc -w",
+      "dev": "nodemon dist/index.js",
+      "start": "node dist/index.js",
+      "start2": "ts-node src/index.ts"
+   }
 }

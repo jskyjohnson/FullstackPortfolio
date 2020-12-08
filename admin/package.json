@@ -1,38 +1,25 @@
 {
-  "name": "client",
-  "version": "0.2.0",
-  "description": "Front end client",
-  "private": true,
+  "name": "admin",
+  "version": "0.1.0",
+  "description": "admin portal for graphql data server",
   "author": {
     "name": "Sky Johnson",
     "email": "jsky.johnson@gmail.com",
     "url": "https://skyjohnson.me",
     "github": "jskyjohnson"
   },
-  "license": "SEE LICENSE IN ROOT",
+  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
-    "@types/node": "^14.14.6",
+    "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
-    "@types/react-pdf": "^5.0.0",
-    "@types/react-router-dom": "^5.1.6",
-    "cors": "^2.8.5",
-    "node-sass": "4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-download-link": "^2.3.0",
-    "react-masonry-component": "^6.2.1",
-    "react-pdf": "^5.0.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.0",
-    "react-slick": "^0.27.12",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.1",
-    "slick-carousel": "^1.8.1",
+    "react-scripts": "4.0.1",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
@@ -59,11 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/react-slick": "^0.23.4",
-    "dotenv": "^8.2.0",
-    "file-loader": "^6.2.0",
-    "url-loader": "^4.1.1"
   }
 }
