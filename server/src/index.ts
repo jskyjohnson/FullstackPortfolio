@@ -6,10 +6,11 @@ import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import { HelloWorldResolver } from "./resolvers/HelloWorldResolver";
 import { MovieResolver } from "./resolvers/MovieResolver";
+import { UserResolver } from "./resolvers/UserResolver";
 
 require("dotenv").config();
 
-const startServer = async () => {
+(async () => {
   const app = express();
 
   let db_port = parseInt(process.env.db_port!);
@@ -29,7 +30,7 @@ const startServer = async () => {
 
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [MovieResolver],
+      resolvers: [UserResolver],
     }),
     context: ({ req, res }) => ({ req, res }),
   });
@@ -39,6 +40,5 @@ const startServer = async () => {
   app.listen({ port: 4000 }, () =>
     console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
   );
-};
+})();
 
-startServer();
