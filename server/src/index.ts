@@ -34,7 +34,7 @@ require("dotenv").config();
     context: ({ req, res }) => ({ req, res }),
   });
 
-  server.applyMiddleware({ app, cors: false });
+  server.applyMiddleware({ app, cors: true });
   
   app.listen({ port: 4000 }, () =>
     console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
