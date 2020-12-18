@@ -24,7 +24,7 @@ require("dotenv").config();
     migrations: ["dist/migration/**/*.js"],
     subscribers: ["dist/subscriber/**/*.js"],
     synchronize: true,
-    logging: true,
+    // logging: true,
   });
 
   const server = new ApolloServer({

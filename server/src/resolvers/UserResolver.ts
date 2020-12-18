@@ -37,7 +37,6 @@ export class UserResolver {
   @Mutation(() => Boolean)
   async Register(
     @Arg("name") name: string,
-    @Arg("email") email: string,
     @Arg("password") password: string
   ) {
     const hashedPassword = await hash(password, 13);
@@ -45,7 +44,6 @@ export class UserResolver {
     try {
       await User.insert({
         name,
-        email,
         password: hashedPassword
       });
     } catch (err) {
@@ -57,8 +55,8 @@ export class UserResolver {
   }
 
   @Mutation(() => LoginResponse)
-  async Login(@Arg("email") email: string, @Arg("password") password: string) {
-    const user = await User.findOne({ where: { email } });
+  async Login(@Arg("name") name: string, @Arg("password") password: string) {
+    const user = await User.findOne({ where: { name } });
 
     if (!user) {
       throw new Error("Could not find user");
@@ -70,9 +68,11 @@ export class UserResolver {
       throw new Error("Bad password");
     }
 
+    const expirationSeconds = 60 * 60 * 5;
+
     return {
       accessToken: sign({ userId: user.id }, process.env.secret!, {
-        expiresIn: "60m"
+        expiresIn: expirationSeconds
       })
     };
   }
