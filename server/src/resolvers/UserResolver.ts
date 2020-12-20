@@ -6,7 +6,7 @@ import {
   ObjectType,
   Field,
   UseMiddleware,
-  Ctx
+  Ctx,
 } from "type-graphql";
 import { sign } from "jsonwebtoken";
 import { hash, compare } from "bcryptjs";
@@ -34,25 +34,25 @@ export class UserResolver {
     return `Your user id : ${payload!.userId}`;
   }
 
-  @Mutation(() => Boolean)
-  async Register(
-    @Arg("name") name: string,
-    @Arg("password") password: string
-  ) {
-    const hashedPassword = await hash(password, 13);
-    // let user = null;
-    try {
-      await User.insert({
-        name,
-        password: hashedPassword
-      });
-    } catch (err) {
-      console.log(err);
-      return false;
-    }
+  // @Mutation(() => Boolean)
+  // async Register(
+  //   @Arg("name") name: string,
+  //   @Arg("password") password: string
+  // ) {
+  //   const hashedPassword = await hash(password, 13);
+  //   // let user = null;
+  //   try {
+  //     await User.insert({
+  //       name,
+  //       password: hashedPassword
+  //     });
+  //   } catch (err) {
+  //     console.log(err);
+  //     return false;
+  //   }
 
-    return true;
-  }
+  //   return true;
+  // }
 
   @Mutation(() => LoginResponse)
   async Login(@Arg("name") name: string, @Arg("password") password: string) {
@@ -72,8 +72,8 @@ export class UserResolver {
 
     return {
       accessToken: sign({ userId: user.id }, process.env.secret!, {
-        expiresIn: expirationSeconds
-      })
+        expiresIn: expirationSeconds,
+      }),
     };
   }
 }

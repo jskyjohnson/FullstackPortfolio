@@ -6,6 +6,9 @@ import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import { UserResolver } from "./resolvers/UserResolver";
 import { SampleCRUDPostResolver } from "./resolvers/SampleCRUDPostResolver";
+import { User } from "./entity/User";
+import { hash } from "bcryptjs";
+import { userInfo } from "os";
 
 require("dotenv").config();
 
@@ -13,7 +16,7 @@ require("dotenv").config();
   const app = express();
 
   let db_port = parseInt(process.env.db_port!);
-  await createConnection({
+  const conn = await createConnection({
     type: "postgres",
     host: process.env.db_host,
     port: db_port,
@@ -26,6 +29,25 @@ require("dotenv").config();
     synchronize: true,
     // logging: true,
   });
+
+  // const hashedPassword = await hash(password, 13);
+  //   // let user = null;
+  //   try {
+  //     await User.insert({
+  //       name,
+  //       password: hashedPassword
+  //     });
+  //   } catch (err) {
+  //     console.log(err);
+  //     return false;
+  //   }
+
+  const hashedPassword = await hash( process.env.admin_password as string, 13)
+  const admin = new User();
+  admin.id = 1;
+  admin.name = process.env.admin_username!;
+  admin.password = hashedPassword!;
+  await User.save(admin)
 
   const server = new ApolloServer({
     schema: await buildSchema({
