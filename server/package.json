@@ -1,6 +1,7 @@
 {
    "name": "apollo-typescript-postgres-server-boilerplate",
    "version": "0.0.1",
+   "license" : "SEE LICENSE IN ROOT",
    "description": "Awesome project developed with TypeORM.",
    "devDependencies": {
       "@types/express": "^4.17.9",
@@ -27,6 +28,7 @@
    },
    "scripts": {
       "watch": "tsc -w",
+      "build": "tsc",
       "dev": "nodemon dist/index.js",
       "start": "node dist/index.js",
       "start2": "ts-node src/index.ts"

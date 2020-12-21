@@ -56,7 +56,7 @@ export class UserResolver {
 
   @Mutation(() => LoginResponse)
   async Login(@Arg("name") name: string, @Arg("password") password: string) {
-    console.log("LOOKING FOR USER WITH : " + name);
+    // console.log("LOOKING FOR USER WITH : " + name);
 
     const user = await User.findOne({ where: { name } });
 
