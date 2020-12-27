@@ -1,0 +1,13 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "nullzunyan",
+  "password": "badbugga2",
+  "database": "personal_portfolio_empty",
+  "entities": ["dist/entity/*.js"],
+  "migrations": ["dist/migration/*.js"],
+  "cli": {
+    "migrationsDir": "src/migration"
+  }
+}

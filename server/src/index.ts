@@ -12,54 +12,48 @@ import { userInfo } from "os";
 
 require("dotenv").config();
 
-(async () => {
+const main = async () => {
   const app = express();
 
+  app.set("proxy", 1);
   let db_port = parseInt(process.env.db_port!);
   const conn = await createConnection({
     type: "postgres",
-    host: process.env.db_host,
-    port: db_port,
-    username: process.env.db_username,
-    password: process.env.db_password,
-    database: process.env.db_database,
+    url: process.env.DATABASE_URL,
     entities: ["dist/entity/**/*.js"],
     migrations: ["dist/migration/**/*.js"],
     subscribers: ["dist/subscriber/**/*.js"],
-    synchronize: true,
-    // logging: true,
+    synchronize: false,
+    logging: true,
   });
 
-  // const hashedPassword = await hash(password, 13);
-  //   // let user = null;
-  //   try {
-  //     await User.insert({
-  //       name,
-  //       password: hashedPassword
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //     return false;
-  //   }
+  await conn.runMigrations();
 
-  const hashedPassword = await hash( process.env.admin_password as string, 13)
+  const hashedPassword = await hash(process.env.admin_password as string, 13);
+
   const admin = new User();
   admin.id = 1;
   admin.name = process.env.admin_username!;
   admin.password = hashedPassword!;
-  await User.save(admin)
+  await User.save(admin);
 
   const server = new ApolloServer({
     schema: await buildSchema({
       resolvers: [UserResolver, SampleCRUDPostResolver],
     }),
     context: ({ req, res }) => ({ req, res }),
+    playground: true
   });
 
-  server.applyMiddleware({ app, cors: true });
-  
-  app.listen({ port: 4000 }, () =>
-    console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
-  );
-})();
+  server.applyMiddleware({ app, cors: { origin: "http://localhost:3000" } });
 
+  const PORT = process.env.PORT || 4000;
+
+  app.listen({ port: process.env.PORT }, () =>
+    console.log(`🚀 Server ready at ${server.graphqlPath}`)
+  );
+};
+
+main().catch((err) => {
+  console.error(err);
+});
