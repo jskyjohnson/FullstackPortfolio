@@ -4,11 +4,13 @@ import express from "express";
 import { ApolloServer } from "apollo-server-express";
 
 import { buildSchema } from "type-graphql";
-import { UserResolver } from "./resolvers/UserResolver";
+import { AdminResolver } from "./resolvers/AdminResolver";
 import { SampleCRUDPostResolver } from "./resolvers/SampleCRUDPostResolver";
-import { User } from "./entity/User";
+import { Admin } from "./entity/Admin";
 import { hash } from "bcryptjs";
 import { userInfo } from "os";
+import { UserResolver } from "./resolvers/UserResolver";
+import { User } from "./entity/User";
 
 require("dotenv").config();
 
@@ -23,23 +25,27 @@ const main = async () => {
     entities: ["dist/entity/**/*.js"],
     migrations: ["dist/migration/**/*.js"],
     subscribers: ["dist/subscriber/**/*.js"],
-    synchronize: false,
+    synchronize: true,
     logging: true,
   });
 
-  await conn.runMigrations();
+  //await conn.runMigrations();
 
   const hashedPassword = await hash(process.env.admin_password as string, 13);
 
-  const admin = new User();
+  const admin = new Admin();
   admin.id = 1;
   admin.name = process.env.admin_username!;
   admin.password = hashedPassword!;
-  await User.save(admin);
+  await Admin.save(admin);
+
+  // const user = new User();
+  // user.id = 1;
+  // await User.save(user);
 
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [UserResolver, SampleCRUDPostResolver],
+      resolvers: [UserResolver, AdminResolver, SampleCRUDPostResolver],
     }),
     context: ({ req, res }) => ({ req, res }),
     playground: true

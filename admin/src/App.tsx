@@ -1,8 +1,10 @@
-// import { SampleCrudContainer } from "containers/SampleCrudContainer";
+import { Login } from "component/Login";
+import { SampleCrudContainer } from "containers/SampleCrudContainer";
 import { SampleJSONFormContainer } from "containers/SampleJSONFormContainer";
+import { UserData } from "containers/UserData";
 import React from "react";
 
-import { Container, Header } from "semantic-ui-react";
+import { Container, Divider, Header } from "semantic-ui-react";
 
 function App() {
   return (
@@ -11,10 +13,15 @@ function App() {
         <Header as="h1"> Welcome to the admin portal </Header>
       </Container>
 
+      <Divider />
+
+      <Login />
+
+      <Divider />
+
       {/* <SampleCrudContainer /> */}
 
-      <SampleJSONFormContainer />
-
+      {/* <SampleJSONFormContainer /> */}
 
       {/* Content for all the other stuff */}
 
@@ -27,8 +34,19 @@ function App() {
           Keep up <- content
 
       */}
+      
+      {/* UserData */}
 
-      {/* Sample CRUD */}
+      <UserData />
+      {/* Homepage Data */}
+
+      {/* Project Menu Info */}
+
+      {/* Socials Media Info */}
+
+      {/* Projects */}
+
+      {/* Blog posts??? secondary */}
     </div>
   );
 }

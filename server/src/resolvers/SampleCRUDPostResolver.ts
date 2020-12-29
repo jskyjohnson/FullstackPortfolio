@@ -14,7 +14,7 @@ import { hash, compare } from "bcryptjs";
 import { SampleCRUDPost } from "../entity/SampleCRUDPost";
 import { isAuth } from "../isAuth";
 import { MyContext } from "../MyContext";
-import { User } from "../entity/User";
+import { Admin } from "../entity/Admin";
 
 @ObjectType()
 class SampleCRUDPostResponse {
