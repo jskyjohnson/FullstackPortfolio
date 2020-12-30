@@ -45,7 +45,8 @@ const main = async () => {
 
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [UserResolver, AdminResolver, SampleCRUDPostResolver],
+      resolvers: [UserResolver, AdminResolver, SampleCRUDPostResolver]
+      
     }),
     context: ({ req, res }) => ({ req, res }),
     playground: true

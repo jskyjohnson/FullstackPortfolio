@@ -16,19 +16,18 @@ import {
 import { isAuth } from "../isAuth";
 import { userInfo } from "os";
 import { MyContext } from "src/MyContext";
-
+import { Softwares } from "src/entity/Softwares";
 
 @InputType()
 class ServicesInput {
+  @Field({ nullable: true })
+  app: String;
 
-	@Field()
-	app: String;
-	
-	@Field()
-	account: String;
-	
-	@Field()
-	profileUrl: String;
+  @Field({ nullable: true })
+  account: String;
+
+  @Field({ nullable: true })
+  profileUrl: String;
 }
 
 @InputType()
@@ -45,7 +44,6 @@ class ContactInput {
   @Field({ nullable: true })
   long: String;
 
-
   @Field(() => [ServicesInput], { nullable: true })
   services: [ServicesInput];
 
@@ -58,13 +56,12 @@ class SoftwaresInput {
   @Field(() => ID)
   id: number;
 
-  @Field()
+  @Field({ nullable: true })
   category: string;
 
-  @Field(() => [String])
+  @Field(() => [String], { nullable: true })
   list: string[];
 }
-
 
 @InputType()
 class ExperiencesInput {
@@ -81,7 +78,7 @@ class ExperiencesInput {
   date: Date;
 
   @Field({ nullable: true })
-	location: string;
+  location: string;
 }
 
 @InputType()
@@ -92,16 +89,16 @@ class AboutInput {
   @Field({ nullable: true })
   about_header_message: string;
 
-  @Field(() => [ExperiencesInput],  { nullable: true })
+  @Field((type) => [ExperiencesInput], { nullable: true })
   experience: ExperiencesInput[];
 
-  @Field(() => [SoftwaresInput], { nullable: true })
+  @Field((type) => [SoftwaresInput], { nullable: true })
   softwares: SoftwaresInput[];
 
-  @Field(() => [[String]], { nullable: true })
+  @Field((type) => [[String]], { nullable: true })
   info: string[][];
 
-  @Field(() => [[String]], { nullable: true })
+  @Field((type) => [[String]], { nullable: true })
   bios: string[][];
 }
 
@@ -113,17 +110,16 @@ class UserInfoInput {
   @Field({ nullable: true })
   first_name: String;
 
-
   @Field({ nullable: true })
   last_name: string;
 
   @Field({ nullable: true })
   footerMessage: string;
 
-  @Field((type) => AboutInput)
+  @Field((type) => AboutInput, { nullable: true })
   about: AboutInput;
 
-  @Field((type) => ContactInput)
+  @Field((type) => ContactInput, { nullable: true })
   contact: ContactInput;
 }
 
@@ -135,7 +131,7 @@ class UserUpdateResponse {
   @Field()
   message: String;
 
-  @Field()
+  @Field((type) => User, { nullable: true })
   user: User;
 }
 
@@ -143,7 +139,8 @@ class UserUpdateResponse {
 export class UserResolver {
   @Query(() => User)
   async GetUser(@Arg("id") id: Number) {
-    return await User.findOne(+id);
+    let retUser = await User.findOne(+id);
+    return retUser;
   }
 
   @Mutation(() => UserUpdateResponse)
@@ -160,6 +157,10 @@ export class UserResolver {
     let user = await User.findOne({ where: { id: payload?.userId } });
 
     let retUser = null;
+    let retServices = null;
+    let retSoftwares = null;
+    let retExperiences = null;
+
     if (user === undefined) {
       return {
         success: false,
@@ -170,21 +171,35 @@ export class UserResolver {
 
     try {
       //ADD EVERYTHING!
-      console.log(content.about.info);
-      retUser = await User.update(userId!, {
+      console.log(content.about.softwares);
+
+      //about.Softwares
+
+      // retSoftwares = await Softwares.update(userId!, {});
+
+      //about.Experiences
+
+      //contact.services
+      let usr = {
+        id: +userId!,
+
         title_name: String(content.title_name),
         first_name: String(content.first_name),
         last_name: String(content.last_name),
         footerMessage: String(content.footerMessage),
-        about: { 
+        about: {
           about_pic: String(content.about.about_pic),
           about_header_message: String(content.about.about_header_message),
           info: content.about.info,
-          // bios: content.about.bios,
+          bios: content.about.bios,
           // experience: String(content.about.experience)
+
+          //Now how do i save experiences and softwares?
         },
         // contact: {...content.contact}
-      });
+      };
+
+      retUser = await User.preload(usr);
     } catch (err) {
       console.error("ERR" + err);
       return {
