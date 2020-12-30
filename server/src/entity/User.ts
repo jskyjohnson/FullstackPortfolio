@@ -1,37 +1,47 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  BaseEntity,
+  ManyToOne,
+  OneToMany,
+} from "typeorm";
 import { Field, Int, ObjectType, ID } from "type-graphql";
+import { Softwares } from "./Softwares";
+import { Experiences } from "./Experiences";
+import { Services } from "./Services";
+
+
+
 
 @ObjectType()
-@Entity()
-export class Experiences {
-  @Field(() => Number)
-  @PrimaryGeneratedColumn()
-  id: number;
-
-  @Field()
+export class Contact {
+  @Field({ nullable: true })
   @Column("text", { nullable: true })
-  organization: string;
+  email: String;
 
-  @Field()
-  @Column({ type: "date", nullable: true })
-  date: Date;
-
-  @Field()
+  @Field({ nullable: true })
   @Column("text", { nullable: true })
-  location: string;
+  location: String;
+
+  @Field({ nullable: true })
+  @Column("text", { nullable: true })
+  lat: String;
+
+  @Field({ nullable: true })
+  @Column("text", { nullable: true })
+  long: String;
+
+
+  @Field(() => [Services], { nullable: true })
+  @OneToMany((type) => Services, (service) => service.user)
+  services: [Services];
+
+  @Field(() => [[String]], { nullable: true })
+  @Column("text", { nullable: true, array: true })
+  contactMessage: [String];
 }
 
-@ObjectType()
-export class Softwares {
-  @Field(() => Number)
-  id: number;
-
-  @Field()
-  category: string;
-
-  @Field(() => [String])
-  list: string[];
-}
 
 //Most everything here doesn't need to be a sep entity
 @ObjectType()
@@ -40,22 +50,23 @@ export class About {
   @Column("text", { nullable: true })
   about_pic: string;
 
-  @Field(  { nullable: true } )
+  @Field({ nullable: true })
   @Column("text", { nullable: true })
   about_header_message: string;
 
-	@Field(() => [Experiences],  { nullable: true })
-	// @Column( {nullable: true})
+  @Field(() => [Experiences],  { nullable: true })
+  @OneToMany((type) => Experiences, (experience) => experience.user)
   experience: Experiences[];
 
-  @Field(() => [Softwares],  { nullable: true })
+  @Field(() => [Softwares], { nullable: true })
+  @OneToMany((type) => Softwares, (software) => software.user)
   softwares: Softwares[];
 
-  @Field(() => [[String]],  { nullable: true })
+  @Field(() => [[String]], { nullable: true })
   @Column("text", { nullable: true, array: true })
   info: string[][];
 
-  @Field(() => [[String]],  { nullable: true })
+  @Field(() => [[String]], { nullable: true })
   @Column("text", { nullable: true, array: true })
   bios: string[][];
 }
@@ -86,20 +97,11 @@ export class User extends BaseEntity {
   @Field((type) => About)
   @Column(() => About)
   about: About;
-  // contact: Contact;
+
+  @Field((type) => Contact)
+  @Column(() => Contact)
+  contact: Contact;
 }
 
-// class Contact {
-//   email: String;
-//   location: String;
-//   lat: String;
-//   long: String;
-//   services: [Services];
-//   contactMessage: [String];
-// }
 
-// class Services {
-//   app: String;
-//   account: String;
-//   profileUrl: String;
-// }
+

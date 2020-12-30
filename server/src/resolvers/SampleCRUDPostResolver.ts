@@ -122,50 +122,50 @@ export class SampleCRUDPostResolver {
     };
   }
 
-  @Mutation(() => SampleCRUDUpdateResponse)
-  async UpdateNoAuth(
-    @Arg("id", () => Int) id: number,
-    @Arg("title") title: string,
-    @Arg("content", (type) => [[String]]) content?: string[][]
-    //@Ctx() { payload }: MyContext
-  ) {
-    let samplepost = await SampleCRUDPost.findOne({ where: { id } });
+  // @Mutation(() => SampleCRUDUpdateResponse)
+  // async UpdateNoAuth(
+  //   @Arg("id", () => Int) id: number,
+  //   @Arg("title") title: string,
+  //   @Arg("content", (type) => [[String]]) content?: string[][]
+  //   //@Ctx() { payload }: MyContext
+  // ) {
+  //   let samplepost = await SampleCRUDPost.findOne({ where: { id } });
 
-    if (samplepost === undefined) {
-      return {
-        success: false,
-        message: "Unable to find post with id: " + id,
-        post: {
-          id: 0,
-          title: "",
-          content: [[]],
-        },
-      };
-    }
+  //   if (samplepost === undefined) {
+  //     return {
+  //       success: false,
+  //       message: "Unable to find post with id: " + id,
+  //       post: {
+  //         id: 0,
+  //         title: "",
+  //         content: [[]],
+  //       },
+  //     };
+  //   }
 
-    try {
-      await SampleCRUDPost.update(
-        { id },
-        {
-          title,
-          content,
-        }
-      );
-    } catch (err) {
-      console.error("ERR" + err);
-      return {
-        success: false,
-        message: "failed to update",
-        post: samplepost,
-      };
-    }
+  //   try {
+  //     await SampleCRUDPost.update(
+  //       { id },
+  //       {
+  //         title,
+  //         content,
+  //       }
+  //     );
+  //   } catch (err) {
+  //     console.error("ERR" + err);
+  //     return {
+  //       success: false,
+  //       message: "failed to update",
+  //       post: samplepost,
+  //     };
+  //   }
 
-    return {
-      success: true,
-      message: "successfully Updated",
-      post: samplepost,
-    };
-  }
+  //   return {
+  //     success: true,
+  //     message: "successfully Updated",
+  //     post: samplepost,
+  //   };
+  // }
 
   //Delete
 

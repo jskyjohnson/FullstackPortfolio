@@ -34,6 +34,12 @@ export class AdminResolver {
     return `Your user id : ${payload!.userId}`;
   }
 
+  @Query(() => String)
+  @UseMiddleware(isAuth)
+  async getID(@Ctx() { payload }: MyContext) {
+    return payload!.userId;
+  }
+
   // @Mutation(() => Boolean)
   // async Register(
   //   @Arg("name") name: string,
