@@ -1,4 +1,4 @@
-import { User } from "../entity/User";
+import { Service, User } from "../entity/User";
 import {
   Arg,
   Field,
@@ -15,8 +15,11 @@ import {
 } from "type-graphql";
 import { isAuth } from "../isAuth";
 import { userInfo } from "os";
-import { MyContext } from "src/MyContext";
-import { Softwares } from "src/entity/Softwares";
+import { MyContext } from "../MyContext";
+// import { Softwares } from "../entity/Softwares";
+import { Connection, EntityManager, getManager } from "typeorm";
+// import { Experiences } from "../entity/Experiences";
+// import { Services } from "src/entity/Services";
 
 @InputType()
 class ServicesInput {
@@ -45,10 +48,10 @@ class ContactInput {
   long: String;
 
   @Field(() => [ServicesInput], { nullable: true })
-  services: [ServicesInput];
+  services: ServicesInput[];
 
   @Field(() => [[String]], { nullable: true })
-  contactMessage: [String];
+  contactMessage: [string];
 }
 
 @InputType()
@@ -75,7 +78,7 @@ class ExperiencesInput {
   job: string;
 
   @Field({ nullable: true })
-  date: Date;
+  date: string;
 
   @Field({ nullable: true })
   location: string;
@@ -150,56 +153,51 @@ export class UserResolver {
     @Ctx() { payload }: MyContext,
     @Arg("content", (type) => UserInfoInput) content: UserInfoInput
   ) {
-    // console.log("TEST");
-    console.log(payload?.userId);
+    const entityManager = getManager();
 
     let userId = payload?.userId;
-    let user = await User.findOne({ where: { id: payload?.userId } });
+    // let user = await User.findOne({ where: { id: payload?.userId } });
+    const user = await entityManager.findOne(User, userId);
 
-    let retUser = null;
-    let retServices = null;
-    let retSoftwares = null;
-    let retExperiences = null;
+    // let retUser = null;
+    // let retServices = null;
+    // let retSoftwares = null;
+    // let retExperiences = null;
 
     if (user === undefined) {
       return {
         success: false,
         message: "Error in finding user with id " + payload?.userId,
-        user: retUser,
+        user: user,
       };
     }
 
     try {
-      //ADD EVERYTHING!
-      console.log(content.about.softwares);
 
-      //about.Softwares
 
-      // retSoftwares = await Softwares.update(userId!, {});
-
-      //about.Experiences
-
-      //contact.services
-      let usr = {
-        id: +userId!,
-
-        title_name: String(content.title_name),
-        first_name: String(content.first_name),
-        last_name: String(content.last_name),
-        footerMessage: String(content.footerMessage),
-        about: {
-          about_pic: String(content.about.about_pic),
-          about_header_message: String(content.about.about_header_message),
-          info: content.about.info,
-          bios: content.about.bios,
-          // experience: String(content.about.experience)
-
-          //Now how do i save experiences and softwares?
-        },
-        // contact: {...content.contact}
+      //Services, Experience, and Softwares are turned into json strings PLEASE FOR THE LOVE OF GOD FIX THIS
+      user.title_name = String(content.title_name);
+      user.first_name = String(content.first_name);
+      user.last_name = String(content.last_name);
+      user.footerMessage = String(content.footerMessage);
+      user.about = {
+        about_pic: String(content.about.about_pic),
+        about_header_message: String(content.about.about_header_message),
+        info: content.about.info,
+        bios: content.about.bios,
+        experience:  JSON.stringify(content.about.experience),
+        softwares: JSON.stringify(content.about.softwares),
+      };
+      user.contact = {
+        email: String(content.contact.email),
+        location: String(content.contact.location),
+        lat: String(content.contact.lat),
+        long: String(content.contact.long),
+        contactMessage: content.contact.contactMessage,
+        services: JSON.stringify(content.contact.services)
       };
 
-      retUser = await User.preload(usr);
+      await User.save(user);
     } catch (err) {
       console.error("ERR" + err);
       return {
@@ -208,11 +206,19 @@ export class UserResolver {
         user: null,
       };
     }
-    return {
-      success: true,
-      message: "test",
-      user: retUser,
-    };
+    if (user != null) {
+      return {
+        success: true,
+        message: "Successfully Updated Value",
+        user: user,
+      };
+    } else {
+      return {
+        success: false,
+        message: "Something went wrong!",
+        user: user,
+      };
+    }
   }
 
   //Update values..
