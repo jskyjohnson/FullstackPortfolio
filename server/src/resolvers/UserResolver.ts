@@ -16,10 +16,7 @@ import {
 import { isAuth } from "../isAuth";
 import { userInfo } from "os";
 import { MyContext } from "../MyContext";
-// import { Softwares } from "../entity/Softwares";
 import { Connection, EntityManager, getManager } from "typeorm";
-// import { Experiences } from "../entity/Experiences";
-// import { Services } from "src/entity/Services";
 
 @InputType()
 class ServicesInput {
