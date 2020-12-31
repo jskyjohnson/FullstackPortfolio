@@ -243,16 +243,9 @@ export const UserData = () => {
 
   const onSubmit: any = ({ formData }: any, e: any) => {
     e.preventDefault();
-
-    // const content = {
-    //   content: formData,
-    // };
     updateUserInfo({ variables: { content: formData } })
       .then((res) => window.location.reload())
       .catch((err) => console.error(err));
-    // console.log(formData);
-
-    // console.log("SUBMITTING");
   };
 
   return (
