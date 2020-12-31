@@ -14,12 +14,14 @@ import { userinfoType } from "data/types";
 //   },
 // };
 
+//Authentication
 const AUTH_ME = gql`
   query {
     getID
   }
 `;
 
+//UserDataQuery
 const USER_DATA = gql`
   query($id: Float!) {
     GetUser(id: $id) {
@@ -64,6 +66,39 @@ const USER_DATA = gql`
   }
 `;
 
+//UserDataUpdateMutation
+const UPDATE_USER_DATA = gql`
+  mutation($content: UserInfoInput!) {
+    UpdateUserData(content: $content) {
+      message
+      success
+      user {
+        title_name
+        first_name
+        last_name
+        footerMessage
+        about {
+          about_pic
+          about_header_message
+          info
+          bios
+          experience
+          softwares
+        }
+        contact {
+          email
+          location
+          lat
+          long
+          contactMessage
+          services
+        }
+      }
+    }
+  }
+`;
+
+//ReactForm Json
 const userDataSchema: any = {
   type: "object",
   properties: {
@@ -173,6 +208,7 @@ export const UserData = () => {
   });
 
   const editData: any = (data: any) => {
+    
     const editedUserData = {
       first_name: data.GetUser.first_name,
       title_name: data.GetUser.title_name,
@@ -195,16 +231,28 @@ export const UserData = () => {
         services: JSON.parse(data.GetUser.contact.services),
       },
     };
+    console.log(editedUserData);
     return editedUserData;
   };
   //Mutations
+  const [updateUserInfo] = useMutation(UPDATE_USER_DATA);
 
   //State
   const [showResults, setShowResults] = React.useState(false);
   const onShow = () => setShowResults(!showResults);
 
-  const onSubmit: any = () => {
-    console.log("SUBMITTING");
+  const onSubmit: any = ({ formData }: any, e: any) => {
+    e.preventDefault();
+
+    // const content = {
+    //   content: formData,
+    // };
+    updateUserInfo({ variables: { content: formData } })
+      .then((res) => window.location.reload())
+      .catch((err) => console.error(err));
+    // console.log(formData);
+
+    // console.log("SUBMITTING");
   };
 
   return (

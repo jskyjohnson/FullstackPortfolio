@@ -50,7 +50,7 @@ export class Contact {
   @Column("text", { nullable: true })
   services: string;
 
-  @Field(() => [[String]], { nullable: true })
+  @Field(() => [String], { nullable: true })
   @Column("text", { nullable: true, array: true })
   contactMessage: [string];
 }

@@ -47,7 +47,7 @@ class ContactInput {
   @Field(() => [ServicesInput], { nullable: true })
   services: ServicesInput[];
 
-  @Field(() => [[String]], { nullable: true })
+  @Field(() => [String], { nullable: true })
   contactMessage: [string];
 }
 
