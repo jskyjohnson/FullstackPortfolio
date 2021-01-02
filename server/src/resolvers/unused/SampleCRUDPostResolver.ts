@@ -11,10 +11,10 @@ import {
 } from "type-graphql";
 import { sign } from "jsonwebtoken";
 import { hash, compare } from "bcryptjs";
-import { SampleCRUDPost } from "../entity/SampleCRUDPost";
-import { isAuth } from "../isAuth";
-import { MyContext } from "../MyContext";
-import { Admin } from "../entity/Admin";
+import { SampleCRUDPost } from "../../entity/unused/SampleCRUDPost";
+import { isAuth } from "../../isAuth";
+import { MyContext } from "../../MyContext";
+import { Admin } from "../../entity/Admin";
 
 @ObjectType()
 class SampleCRUDPostResponse {

@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, CreateDateColumn, ManyToOne, UpdateDateColumn } from "typeorm";
 import { ObjectType, Field, ID } from "type-graphql";
-import { Admin } from "./Admin";
+import { Admin } from "../Admin";
 
 @ObjectType()
 @Entity()

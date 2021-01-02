@@ -5,12 +5,11 @@ import { ApolloServer } from "apollo-server-express";
 
 import { buildSchema } from "type-graphql";
 import { AdminResolver } from "./resolvers/AdminResolver";
-import { SampleCRUDPostResolver } from "./resolvers/SampleCRUDPostResolver";
+import { SampleCRUDPostResolver } from "./resolvers/unused/SampleCRUDPostResolver";
 import { Admin } from "./entity/Admin";
 import { hash } from "bcryptjs";
 import { userInfo } from "os";
 import { UserResolver } from "./resolvers/UserResolver";
-import { User } from "./entity/User";
 
 require("dotenv").config();
 
@@ -45,11 +44,10 @@ const main = async () => {
 
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [UserResolver, AdminResolver, SampleCRUDPostResolver]
-      
+      resolvers: [UserResolver, AdminResolver],
     }),
     context: ({ req, res }) => ({ req, res }),
-    playground: true
+    playground: true,
   });
 
   server.applyMiddleware({ app, cors: { origin: "http://localhost:3000" } });
