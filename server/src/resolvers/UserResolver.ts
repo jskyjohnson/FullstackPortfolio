@@ -170,8 +170,6 @@ export class UserResolver {
     }
 
     try {
-
-
       //Services, Experience, and Softwares are turned into json strings PLEASE FOR THE LOVE OF GOD FIX THIS
       user.title_name = String(content.title_name);
       user.first_name = String(content.first_name);
@@ -182,7 +180,7 @@ export class UserResolver {
         about_header_message: String(content.about.about_header_message),
         info: content.about.info,
         bios: content.about.bios,
-        experience:  JSON.stringify(content.about.experience),
+        experience: JSON.stringify(content.about.experience),
         softwares: JSON.stringify(content.about.softwares),
       };
       user.contact = {
@@ -191,7 +189,7 @@ export class UserResolver {
         lat: String(content.contact.lat),
         long: String(content.contact.long),
         contactMessage: content.contact.contactMessage,
-        services: JSON.stringify(content.contact.services)
+        services: JSON.stringify(content.contact.services),
       };
 
       await User.save(user);
