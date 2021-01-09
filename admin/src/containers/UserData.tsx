@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container } from "semantic-ui-react";
+import { Button, Container, Grid, Header, GridColumn } from "semantic-ui-react";
 import Form from "@rjsf/bootstrap-4";
 import { userinfo } from "data/userinfo";
 import { useQuery, gql, useMutation, NetworkStatus } from "@apollo/client";
@@ -208,7 +208,6 @@ export const UserData = () => {
   });
 
   const editData: any = (data: any) => {
-    
     const editedUserData = {
       first_name: data.GetUser.first_name,
       title_name: data.GetUser.title_name,
@@ -231,9 +230,10 @@ export const UserData = () => {
         services: JSON.parse(data.GetUser.contact.services),
       },
     };
-    console.log(editedUserData);
+    //console.log(editedUserData);
     return editedUserData;
   };
+
   //Mutations
   const [updateUserInfo] = useMutation(UPDATE_USER_DATA);
 
@@ -251,29 +251,33 @@ export const UserData = () => {
   return (
     <div>
       <Container>
-        <div>
-          {" "}
-          {loading ? (
-            <p> loading... </p>
-          ) : error ? (
-            <p> err </p>
-          ) : (
-            <h2> Data polling on userID: {data.getID} </h2>
-          )}{" "}
-          <Button onClick={() => refetch()}> Get Auth </Button>
-          <p>:</p>
-          <p> user data status : </p>
-          {userNetworkStatus === NetworkStatus.refetch ? (
-            <p>Fetching!</p>
-          ) : userLoading ? (
-            <p> loading User Data... </p>
-          ) : userError ? (
-            <p> Err On User Data, waiting for login </p>
-          ) : (
-            <h2> USER DATA RETRIEVED </h2>
-          )}
-          <Button onClick={() => userRefetch()}> Get User Data </Button>
-        </div>
+        <Header> User Data </Header>
+        <Grid fluid columns={2}>
+          <Grid.Column>
+            {loading ? (
+              <p> loading... </p>
+            ) : error ? (
+              <p> err </p>
+            ) : (
+              <h2> Data polling on userID: {data.getID} </h2>
+            )}{" "}
+            <Button onClick={() => refetch()}> Get Auth </Button>
+          </Grid.Column>
+
+          <Grid.Column>
+            <p> user data status : </p>
+            {userNetworkStatus === NetworkStatus.refetch ? (
+              <p>Fetching!</p>
+            ) : userLoading ? (
+              <p> loading User Data... </p>
+            ) : userError ? (
+              <p> Err On User Data, waiting for login </p>
+            ) : (
+              <h2> USER DATA RETRIEVED </h2>
+            )}
+            <Button onClick={() => userRefetch()}> Get User Data </Button>
+          </Grid.Column>
+        </Grid>
 
         <Button icon="eye" onClick={() => onShow()} />
         {showResults ? (

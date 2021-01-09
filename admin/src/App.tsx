@@ -1,6 +1,9 @@
 import { Login } from "component/Login";
+import { HomepageData } from "containers/HomepageData";
+import { ProjectMenuData } from "containers/ProjectMenuData";
 import { SampleCrudContainer } from "containers/SampleCrudContainer";
 import { SampleJSONFormContainer } from "containers/SampleJSONFormContainer";
+import { SocialsData } from "containers/SocialsData";
 import { UserData } from "containers/UserData";
 import React from "react";
 
@@ -19,34 +22,35 @@ function App() {
 
       <Divider />
 
-      {/* <SampleCrudContainer /> */}
-
-      {/* <SampleJSONFormContainer /> */}
-
-      {/* Content for all the other stuff */}
-
-      {/* This to pull 
-
-          Projects - Menus
-
-          Blogs
-
-          Keep up <- content
-
-      */}
-      
       {/* UserData */}
 
       <UserData />
       {/* Homepage Data */}
+      <Divider />
+
+      <HomepageData />
+
+      {/* Socials Media Info */}
+
+      <Divider />
+
+      <SocialsData />
 
       {/* Project Menu Info */}
 
-      {/* Socials Media Info */}
+      <Divider />
+
+      <ProjectMenuData />
+
+      <Divider />
 
       {/* Projects */}
 
       {/* Blog posts??? secondary */}
+
+      <Container>
+        <div style={{ height: "5vh" }} />
+      </Container>
     </div>
   );
 }
