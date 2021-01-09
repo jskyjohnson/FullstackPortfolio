@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery, gql, useMutation, NetworkStatus } from "@apollo/client";
-import Form from "@rjsf/bootstrap-4";
+import Form from "@rjsf/material-ui"; //Have to use material UI because additional properties isn't supported?
 import {
   Button,
   Container,
@@ -94,9 +94,7 @@ const projectSchema: any = {
     date: { type: "string" },
     meta: {
       type: "object",
-      additionalProperties: {
-        type: "string",
-      },
+      additionalProperties: { type: "string" },
     },
     description: {
       type: "array",
@@ -122,12 +120,16 @@ const projectSchema: any = {
       },
     },
   },
+  additionalProperties: {
+    type: "string",
+  },
 };
 
 export const ProjectData = () => {
   const { loading, error, data, refetch } = useQuery(AUTH_ME);
 
   const editData: any = (data: any) => {
+    console.log(JSON.parse(data.meta));
     const editedData = {
       id: +data.id,
       title: data.title,
@@ -140,6 +142,7 @@ export const ProjectData = () => {
       description: data.description,
       images: data.images,
     };
+    console.log(editedData);
     return editedData;
   };
 
