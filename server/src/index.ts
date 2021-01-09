@@ -13,6 +13,7 @@ import { UserResolver } from "./resolvers/UserResolver";
 import { SocialsResolver } from "./resolvers/SocialsResolver";
 import { HomepageResolver } from "./resolvers/HomepageResolver";
 import { ProjectMenuResolver } from "./resolvers/ProjectMenuResolver";
+import { ProjectResolver } from "./resolvers/ProjectResolver";
 
 require("dotenv").config();
 
@@ -47,7 +48,7 @@ const main = async () => {
 
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [UserResolver, AdminResolver, SocialsResolver, HomepageResolver, ProjectMenuResolver],
+      resolvers: [UserResolver, AdminResolver, SocialsResolver, HomepageResolver, ProjectMenuResolver, ProjectResolver],
     }),
     context: ({ req, res }) => ({ req, res }),
     playground: true,
