@@ -1,5 +1,6 @@
 import { Login } from "component/Login";
 import { HomepageData } from "containers/HomepageData";
+import { ProjectData } from "containers/ProjectData";
 import { ProjectMenuData } from "containers/ProjectMenuData";
 import { SampleCrudContainer } from "containers/SampleCrudContainer";
 import { SampleJSONFormContainer } from "containers/SampleJSONFormContainer";
@@ -17,37 +18,31 @@ function App() {
       </Container>
 
       <Divider />
-
       <Login />
 
-      <Divider />
-
       {/* UserData */}
-
+      <Divider />
       <UserData />
       {/* Homepage Data */}
       <Divider />
-
       <HomepageData />
 
       {/* Socials Media Info */}
 
       <Divider />
-
       <SocialsData />
 
       {/* Project Menu Info */}
 
       <Divider />
-
       <ProjectMenuData />
 
-      <Divider />
-
       {/* Projects */}
+      <Divider />
+      <ProjectData />
 
       {/* Blog posts??? secondary */}
-
+      <Divider />
       <Container>
         <div style={{ height: "5vh" }} />
       </Container>
