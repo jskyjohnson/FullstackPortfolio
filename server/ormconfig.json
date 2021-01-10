@@ -4,7 +4,7 @@
   "port": 5432,
   "username": "nullzunyan",
   "password": "badbugga2",
-  "database": "personal_portfolio_empty",
+  "database": "pp_n",
   "entities": ["dist/entity/*.js"],
   "migrations": ["dist/migration/*.js"],
   "cli": {

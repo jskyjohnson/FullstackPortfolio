@@ -14,9 +14,9 @@ import { setContext } from "@apollo/client/link/context";
 
 require("dotenv").config();
 
-// const serverLocation:string = "https://api.jskylabs.xyz/graphql"
+const serverLocation:string = "https://api.jskylabs.xyz/graphql"
 
-const serverLocation:string = "http://localhost:4000/graphql"
+// const serverLocation:string = "http://localhost:4000/graphql"
 
 const httpLink = createHttpLink({
   uri: (serverLocation),

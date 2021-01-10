@@ -74,16 +74,16 @@ export class HomepageResolver {
 		console.log(userHomepage);
     if (userHomepage === undefined) {
       //Inserting first value...
-      // const usrHom = {
-      //   id: +userId!,
-      //   hero_intro: content.hero_intro,
-      //   intro_text: content.intro_text,
-      //   carousel_text: content.carousel_text,
-      //   hero_portrait: content.hero_portrait,
-      //   carousel_text_values: content.carousel_text_values,
-      // };
+      const usrHom = {
+        id: +userId!,
+        hero_intro: content.hero_intro,
+        intro_text: content.intro_text,
+        carousel_text: content.carousel_text,
+        hero_portrait: content.hero_portrait,
+        carousel_text_values: content.carousel_text_values,
+      };
 
-      // await entityManager.insert(Homepage, usrHom);
+      await entityManager.insert(Homepage, usrHom);
 
       return {
         success: false,

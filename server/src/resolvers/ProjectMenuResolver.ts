@@ -70,11 +70,11 @@ export class ProjectMenuResolver {
 
     if (userProjectMenu === undefined) {
 			//Inserting first value...
-			// const usrProjectMenu = {
-			// 	id : +userId!,
-			// 	json: str
-			// }
-			// await entityManager.insert(ProjectMenu, usrProjectMenu);
+			const usrProjectMenu = {
+				id : +userId!,
+				json: str
+			}
+			await entityManager.insert(ProjectMenu, usrProjectMenu);
 
       return {
         success: false,
