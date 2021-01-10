@@ -60,7 +60,8 @@ const main = async () => {
     playground: true,
   });
 
-  server.applyMiddleware({ app, cors: { origin: "http://localhost:3000" } });
+  //Probably want to set this to localhost:3000, localhost:3001, and skyjohnson.me... rip
+  server.applyMiddleware({ app, cors: { origin: "*" } });
 
   const PORT = process.env.PORT || 4000;
 
