@@ -6,7 +6,7 @@ export interface projectsTypes {
   filter: string;
   thumbnail: string;
   date: Date;
-  meta: any; //Extra things yatta
+  meta: any; //Extra things yatta json object
   description: string[][];
   images: string[];
 }

@@ -153,15 +153,34 @@ export class UserResolver {
     const entityManager = getManager();
 
     let userId = payload?.userId;
-    // let user = await User.findOne({ where: { id: payload?.userId } });
     const user = await entityManager.findOne(User, userId);
 
-    // let retUser = null;
-    // let retServices = null;
-    // let retSoftwares = null;
-    // let retExperiences = null;
-
     if (user === undefined) {
+      // const user = {
+      //   title_name: String(content.title_name),
+      //   first_name: String(content.first_name),
+      //   last_name: String(content.last_name),
+      //   footerMessage: String(content.footerMessage),
+      //   about: {
+      //     about_pic: String(content.about.about_pic),
+      //     about_header_message: String(content.about.about_header_message),
+      //     info: content.about.info,
+      //     bios: content.about.bios,
+      //     experience: JSON.stringify(content.about.experience),
+      //     softwares: JSON.stringify(content.about.softwares),
+      //   },
+      //   contact: {
+      //     email: String(content.contact.email),
+      //     location: String(content.contact.location),
+      //     lat: String(content.contact.lat),
+      //     long: String(content.contact.long),
+      //     contactMessage: content.contact.contactMessage,
+      //     services: JSON.stringify(content.contact.services),
+      //   },
+      // };
+
+      // await User.insert(user);
+
       return {
         success: false,
         message: "Error in finding user with id " + payload?.userId,

@@ -5,7 +5,6 @@ import { ApolloServer } from "apollo-server-express";
 
 import { buildSchema } from "type-graphql";
 import { AdminResolver } from "./resolvers/AdminResolver";
-import { SampleCRUDPostResolver } from "./resolvers/unused/SampleCRUDPostResolver";
 import { Admin } from "./entity/Admin";
 import { hash } from "bcryptjs";
 import { userInfo } from "os";
@@ -28,11 +27,11 @@ const main = async () => {
     entities: ["dist/entity/**/*.js"],
     migrations: ["dist/migration/**/*.js"],
     subscribers: ["dist/subscriber/**/*.js"],
-    synchronize: true,
+    //synchronize: true,
     logging: true,
   });
 
-  //await conn.runMigrations();
+  await conn.runMigrations();
 
   const hashedPassword = await hash(process.env.admin_password as string, 13);
 
@@ -48,7 +47,14 @@ const main = async () => {
 
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [UserResolver, AdminResolver, SocialsResolver, HomepageResolver, ProjectMenuResolver, ProjectResolver],
+      resolvers: [
+        UserResolver,
+        AdminResolver,
+        SocialsResolver,
+        HomepageResolver,
+        ProjectMenuResolver,
+        ProjectResolver,
+      ],
     }),
     context: ({ req, res }) => ({ req, res }),
     playground: true,

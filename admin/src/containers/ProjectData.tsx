@@ -68,7 +68,7 @@ const UPDATE_PROJECT = gql`
 
 const DELETE_PROJECT = gql`
   mutation($id: Int!) {
-    DeleteProject(id: 1)
+    DeleteProject(id: $id)
   }
 `;
 
@@ -120,9 +120,6 @@ const projectSchema: any = {
       },
     },
   },
-  additionalProperties: {
-    type: "string",
-  },
 };
 
 export const ProjectData = () => {
@@ -164,15 +161,15 @@ export const ProjectData = () => {
 
   //onCreate
   const onCreate: any = ({ formData }: any, e: any) => {
-    // e.preventDefault();
-    // createCRUD({
-    //   variables: {
-    //     title: formData.title,
-    //     content: formData.content,
-    //   },
-    // })
-    //   .then((res) => window.location.reload())
-    //   .catch((err) => console.error(err));
+    e.preventDefault();
+    const id_v: number = +formData.id;
+    createProject({
+      variables: {
+        content: formData,
+      },
+    })
+      .then((res) => window.location.reload())
+      .catch((err) => console.error(err));
   };
   //onSubmit (for Updates)
 
@@ -191,11 +188,11 @@ export const ProjectData = () => {
 
   //onDelete
   const onDelete: any = (id_v: number) => {
-    // const id_: number = +id_v;
-    // // console.log(typeof (id_ as number)  );
-    // deleteCRUD({ variables: { id: id_ } })
-    //   .then((res) => window.location.reload())
-    //   .catch((err) => console.error(err));
+    const id_: number = +id_v;
+    // console.log(typeof (id_ as number)  );
+    deleteProject({ variables: { id: id_ } })
+      .then((res) => window.location.reload())
+      .catch((err) => console.error(err));
   };
 
   const [showProjectContainer, setShowProjectContainer] = React.useState(false);

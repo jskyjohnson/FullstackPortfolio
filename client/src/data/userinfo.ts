@@ -70,7 +70,7 @@ export const userinfo: userinfoType = {
     about_header_message: "A passionate developer, artist, and photographer",
     bios: [
       ["background", "I'm a recent college graduate from the University of Colorado Boulder. I studied both Computer Science and Technology Arts and Media. I also pursued a minor in Applied Mathematics with a focus in theoretical statistics. "],
-      ["personality", "I use my multi-faceted background to keep myself always learning new and interdisciplinary topics ranging from automotive engineering to machine learning and game development. I love to get my hands dirty, whether it be with code or a machining and electronics. I love an environment that promotes rapid development.", "Currently I've been learning a lot of new and exciting fullstack cloud technologies to enable some new interesting personal projects."],
+      ["personality", "I use my multi-faceted background to keep myself always learning new and interdisciplinary topics ranging from automotive engineering to machine learning and game development. I love to get my hands dirty, whether it be with code or a machining and electronics. I love an environment that promotes rapid development. Currently I've been learning a lot of new and exciting fullstack cloud technologies to enable some new interesting personal projects."],
     ],
     info: [
       ["University", "University of Colorado Boulder - Cumulative GPA: 3.376"],
@@ -78,7 +78,7 @@ export const userinfo: userinfoType = {
       ["Degree", "Computer Science (BS) - Degree GPA: 3.514"],
       ["2nd Degree", "Creative Technology and Design (BS) - Degree GPA: 3.657"],
       ["Minor", "Applied Mathematics: Theoretical Statistics"],
-      ["Languages", "English: Native", "日本語：～N4 University Experience"],
+      ["Languages", "English: Native, 日本語：～N4 University Experience"],
     ],
     softwares: [
       {

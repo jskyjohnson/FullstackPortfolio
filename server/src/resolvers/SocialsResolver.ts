@@ -71,11 +71,11 @@ export class SocialsResolver {
     if (userSocials === undefined) {
 
 			//Inserting first value...
-			// const usrSoc = {no
-			// 	id : +userId!,
-			// 	json: str
-			// }
-			// // await entityManager.insert(Socials, usrSoc);
+			const usrSoc = {
+				id : +userId!,
+				json: str
+			}
+			await entityManager.insert(Socials, usrSoc);
 
       return {
         success: false,
