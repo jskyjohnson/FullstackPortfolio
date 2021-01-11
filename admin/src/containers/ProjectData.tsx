@@ -143,6 +143,22 @@ export const ProjectData = () => {
     return editedData;
   };
 
+  const removeId: any = (data: any) => {
+    const editedData = {
+      title: data.title,
+      subtitle: data.subtitle,
+      category: data.category,
+      filter: data.filter,
+      thumbnail: data.thumbnail,
+      date: data.date,
+      meta: data.meta,
+      description: data.description,
+      images: data.images,
+    };
+    console.log(editedData);
+    return editedData;
+  };
+
   const {
     loading: projectsLoading,
     error: projectsError,
@@ -176,10 +192,11 @@ export const ProjectData = () => {
   const onSubmit: any = ({ formData }: any, e: any) => {
     e.preventDefault();
     const id_v: number = +formData.id;
+    const data = removeId(formData)
     updateProject({
       variables: {
         id: id_v,
-        content: formData,
+        content: data,
       },
     })
       .then((res) => window.location.reload())
@@ -253,7 +270,7 @@ export const ProjectData = () => {
                   .map((value: any, key: number) => (
                     <div key={key}>
                       <Divider />
-                      <h1> PROJECT ID : {value.id}</h1>
+                      <h1> PROJECT ID : {value.id}, {value.title}</h1>
                       <Button icon="eye" onClick={() => onShow(value.id)} />
                       {showProjects.includes(value.id) ? (
                         <Form
