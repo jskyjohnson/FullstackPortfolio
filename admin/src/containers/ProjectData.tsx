@@ -171,7 +171,7 @@ export const ProjectData = () => {
   //onCreate
   const onCreate: any = ({ formData }: any, e: any) => {
     e.preventDefault();
-    const id_v: number = +formData.id;
+    //const id_v: number = +formData.id;
     createProject({
       variables: {
         content: formData,

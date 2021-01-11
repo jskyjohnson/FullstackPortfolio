@@ -42,10 +42,7 @@ const loginUiSchema: any = {
 export const Login = () => {
   const { loading, error, data, refetch } = useQuery(AUTH_ME);
 
-  const [
-    login,
-    { loading: mutationLoading, error: mutationError },
-  ] = useMutation(GET_LOGIN_TOKEN, {});
+  const [login] = useMutation(GET_LOGIN_TOKEN, {});
 
   const getAuthToken = ({ formData }: any) => {
     // console.log("LOGGING IN WITH" +formData.username);
