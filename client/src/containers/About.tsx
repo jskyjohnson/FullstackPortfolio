@@ -5,16 +5,16 @@ import { isUrl } from "utils/isUrl";
 import { useQuery, gql } from "@apollo/client";
 
 const ABOUT_DATA = gql`
-  query{
-    GetUser(id: 1){
+  query {
+    GetUser(id: 1) {
       about {
-          about_pic
-          about_header_message
-          info
-          bios
-          experience
-          softwares
-        }
+        about_pic
+        about_header_message
+        info
+        bios
+        experience
+        softwares
+      }
     }
   }
 `;
@@ -43,9 +43,9 @@ export const About = () => {
                     // }
                     src={
                       isUrl(userData.GetUser.about.about_pic)
-                        ? require(`assets/images/${userData.GetUser.about.about_pic}`)
+                        ? userData.GetUser.about.about_pic
+                        : require(`assets/images/${userData.GetUser.about.about_pic}`)
                             .default
-                        : userData.GetUser.about.about_pic
                     }
                     fluid
                   />
@@ -123,19 +123,21 @@ export const About = () => {
                   <Header as="h3" className="about_subsection_title">
                     Familiar Software, Libraries, and Tools
                   </Header>
-                  {JSON.parse(userData.GetUser.about.softwares).map((e: any) => (
-                    <div>
-                      <Header as="h3" className="about_softwares_headers">
-                        {e.category}:{" "}
-                      </Header>
-                      <p>
-                        {e.list.map(
-                          (v: any, i: number) =>
-                            v + (i === e.list.length - 1 ? "" : ", ")
-                        )}
-                      </p>
-                    </div>
-                  ))}
+                  {JSON.parse(userData.GetUser.about.softwares).map(
+                    (e: any) => (
+                      <div>
+                        <Header as="h3" className="about_softwares_headers">
+                          {e.category}:{" "}
+                        </Header>
+                        <p>
+                          {e.list.map(
+                            (v: any, i: number) =>
+                              v + (i === e.list.length - 1 ? "" : ", ")
+                          )}
+                        </p>
+                      </div>
+                    )
+                  )}
                 </Grid.Column>
               </Grid.Row>
             </Grid>
