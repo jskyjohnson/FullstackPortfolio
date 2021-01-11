@@ -82,8 +82,8 @@ export const HomeTitle = () => {
               verticalAlign="bottom"
               textAlign="right"
             >
-              {console.log(homeData.GetHomepage.hero_portrait)}
-              {console.log( !isUrl(homeData.GetHomepage.hero_portrait) )}
+              {/* {console.log(homeData.GetHomepage.hero_portrait)} */}
+              {/* {console.log( !isUrl(homeData.GetHomepage.hero_portrait) )} */}
               <Image
                 as="img"
                 className="img_portrait"

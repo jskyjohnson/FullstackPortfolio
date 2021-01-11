@@ -51,7 +51,7 @@ export const ProjectItem = () => {
   });
 
   const editData: any = (data: any) => {
-    console.log(JSON.parse(data.meta));
+    // console.log(JSON.parse(data.meta));
     const editedData = {
       id: +data.id,
       title: data.title,
@@ -64,7 +64,7 @@ export const ProjectItem = () => {
       description: data.description,
       images: data.images,
     };
-    console.log(editedData);
+    // console.log(editedData);
     return editedData;
   };
 

@@ -45,7 +45,6 @@ export const Socials = (props: SocialsProps) => {
     <Grid>
       {socialsData ? (
         <Grid.Row textAlign={d_props.align} style={rowStyle}>
-          {console.log(JSON.parse(socialsData.GetSocials.json))}
           {JSON.parse(socialsData.GetSocials.json).socials.map((social: any) => (
             <a
               style={linkStyle}

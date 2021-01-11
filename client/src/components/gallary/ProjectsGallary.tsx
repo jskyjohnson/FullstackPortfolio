@@ -49,7 +49,7 @@ export const ProjectsGallary = ({ limit }: { limit?: number }) => {
   };
 
   const editData: any = (data: any) => {
-    console.log(JSON.parse(data.meta));
+    // console.log(JSON.parse(data.meta));
     const editedData = {
       id: +data.id,
       title: data.title,
@@ -62,7 +62,7 @@ export const ProjectsGallary = ({ limit }: { limit?: number }) => {
       description: data.description,
       images: data.images,
     };
-    console.log(editedData);
+    // console.log(editedData);
     return editedData;
   };
 
@@ -83,7 +83,7 @@ export const ProjectsGallary = ({ limit }: { limit?: number }) => {
       <Container className="gallery_menu" fluid>
         {projectMenuData ? (
           <Menu text compact size="huge" stackable>
-            {console.log(JSON.parse(projectMenuData.GetProjectMenu.json))}
+            {/* {console.log(JSON.parse(projectMenuData.GetProjectMenu.json))} */}
             {JSON.parse(projectMenuData.GetProjectMenu.json).projectmenu.map(
               (item: any) => (
                 <Menu.Item
