@@ -7,6 +7,7 @@ import { useQuery, gql } from "@apollo/client";
 const ABOUT_DATA = gql`
   query {
     GetUser(id: 1) {
+      title_name
       about {
         about_pic
         about_header_message
