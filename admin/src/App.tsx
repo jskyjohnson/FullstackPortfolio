@@ -2,13 +2,11 @@ import { Login } from "component/Login";
 import { HomepageData } from "containers/HomepageData";
 import { ProjectData } from "containers/ProjectData";
 import { ProjectMenuData } from "containers/ProjectMenuData";
-import { SampleCrudContainer } from "containers/SampleCrudContainer";
-import { SampleJSONFormContainer } from "containers/SampleJSONFormContainer";
 import { SocialsData } from "containers/SocialsData";
 import { UserData } from "containers/UserData";
 import React from "react";
-
 import { Button, Container, Divider, Header } from "semantic-ui-react";
+
 
 function App() {
   const [showUserData, setShowUserData] = React.useState(false);

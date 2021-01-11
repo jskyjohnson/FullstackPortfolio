@@ -1,7 +1,7 @@
-import React from "react";
-import { useQuery, gql, useMutation, NetworkStatus } from "@apollo/client";
+import { gql, NetworkStatus, useMutation, useQuery } from "@apollo/client";
 import Form from "@rjsf/bootstrap-4";
-import { Button, Container, Grid, Header, GridColumn } from "semantic-ui-react";
+import React from "react";
+import { Button, Container, Grid, Header } from "semantic-ui-react";
 
 const AUTH_ME = gql`
   query {

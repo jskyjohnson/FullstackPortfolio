@@ -1,9 +1,7 @@
-import React from "react";
-import { Button, Container, Grid, Header, GridColumn } from "semantic-ui-react";
+import { gql, NetworkStatus, useMutation, useQuery } from "@apollo/client";
 import Form from "@rjsf/bootstrap-4";
-import { userinfo } from "data/userinfo";
-import { useQuery, gql, useMutation, NetworkStatus } from "@apollo/client";
-import { userinfoType } from "data/types";
+import React from "react";
+import { Button, Container, Grid, Header } from "semantic-ui-react";
 
 // const userDataUiSchema: any = {
 //   content: {

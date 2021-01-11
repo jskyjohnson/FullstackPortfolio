@@ -1,16 +1,8 @@
 // import Form from "@rjsf/core";
-import React from "react";
-import {
-  Grid,
-  Header,
-  Segment,
-  Button,
-  Message,
-  Container,
-} from "semantic-ui-react";
-import { useQuery, gql, useMutation } from "@apollo/client";
-
+import { gql, useMutation, useQuery } from "@apollo/client";
 import Form from "@rjsf/bootstrap-4";
+import React from "react";
+import { Button, Container, Grid } from "semantic-ui-react";
 
 const GET_LOGIN_TOKEN = gql`
   mutation($password: String!, $name: String!) {

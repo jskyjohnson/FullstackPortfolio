@@ -1,14 +1,7 @@
-import React from "react";
-import { useQuery, gql, useMutation, NetworkStatus } from "@apollo/client";
+import { gql, NetworkStatus, useMutation, useQuery } from "@apollo/client";
 import Form from "@rjsf/material-ui"; //Have to use material UI because additional properties isn't supported?
-import {
-  Button,
-  Container,
-  Grid,
-  Header,
-  GridColumn,
-  Divider,
-} from "semantic-ui-react";
+import React from "react";
+import { Button, Container, Divider, Grid, Header } from "semantic-ui-react";
 
 //Get Auth
 
@@ -192,7 +185,7 @@ export const ProjectData = () => {
   const onSubmit: any = ({ formData }: any, e: any) => {
     e.preventDefault();
     const id_v: number = +formData.id;
-    const data = removeId(formData)
+    const data = removeId(formData);
     updateProject({
       variables: {
         id: id_v,
@@ -270,7 +263,10 @@ export const ProjectData = () => {
                   .map((value: any, key: number) => (
                     <div key={key}>
                       <Divider />
-                      <h1> PROJECT ID : {value.id}, {value.title}</h1>
+                      <h1>
+                        {" "}
+                        PROJECT ID : {value.id}, {value.title}
+                      </h1>
                       <Button icon="eye" onClick={() => onShow(value.id)} />
                       {showProjects.includes(value.id) ? (
                         <Form

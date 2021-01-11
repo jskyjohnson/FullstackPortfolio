@@ -1,5 +1,4 @@
 export const orderArray = (data: object) => {
-
   console.log("hello");
 
   // array.map((value) => {
@@ -7,5 +6,4 @@ export const orderArray = (data: object) => {
   // }
 
   return data;
-}
-  
+};
