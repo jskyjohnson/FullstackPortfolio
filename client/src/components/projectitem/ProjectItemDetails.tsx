@@ -11,14 +11,18 @@ export const ProjectItemDetails = ({
   project: projectsTypes;
 }) => {
   const pr = project.project;
+
+  //const date = new Date( pr.date );
+  const datest = (pr.date).split(', ');
+  const date = new Date( +datest[2], +datest[1] -1, +datest[0]);
   return (
     <div className="project_details">
       <div>
-        <span className="date_day">{pr.date.getDay()}</span>
+        <span className="date_day">{date.getDate()}</span>
         <span className="date_month">
-          {pr.date.toLocaleString("default", { month: "short" })}
+          {date.toLocaleString("default", { month: "short" })}
         </span>
-        <span className="date_year">{pr.date.getFullYear()}</span>
+        <span className="date_year">{date.getFullYear()}</span>
       </div>
       <Header as="h1" className="project_title">
         {pr.title}

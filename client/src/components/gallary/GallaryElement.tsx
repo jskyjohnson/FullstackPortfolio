@@ -2,6 +2,7 @@ import { projectsTypes } from "data/temp/temp_projects";
 import React from "react";
 import "assets/css/components/ProjectsGallery.scss";
 import { Header, Image } from "semantic-ui-react";
+import { isUrl } from "utils/isUrl";
 
 export interface GallaryElementProps {
   element: projectsTypes;
@@ -24,7 +25,15 @@ export const GallaryElement = ({ element, filter }: GallaryElementProps) => {
     >
       <div className="element_fit">
         <div className="element_image_cover">
-          <Image className="element_image" src={require(`assets/images/${element.thumbnail}`).default} />  
+          <Image
+            className="element_image"
+            // src={require(`assets/images/${element.thumbnail}`).default}
+            src={
+              isUrl(element.thumbnail)
+                ? element.thumbnail 
+                : require(`assets/images/${element.thumbnail}`).default
+            }
+          />
         </div>
       </div>
 

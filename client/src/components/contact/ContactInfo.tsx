@@ -1,21 +1,25 @@
 import React from "react";
 import "assets/css/containers/Contact.scss";
-import { getUserData } from "utils/dataClient";
 
-export const ContactInfo = () => {
+export interface ContactInfoInputs {
+  email: string;
+  services: { app: string; account: string; profileUrl: string }[];
+  location: string;
+}
 
-  let userinfo = getUserData();
-
+export const ContactInfo = ({
+  email,
+  services,
+  location,
+}: ContactInfoInputs) => {
   return (
     <ul>
       {/* {userinfo.contact} */}
       <li>
         <span>Email:</span>
-        <a href={"mailto:" + userinfo.contact.email}>
-          {userinfo.contact.email}
-        </a>
+        <a href={"mailto:" + email}>{email}</a>
       </li>
-      {userinfo.contact.services.map((value, key) => (
+      {services.map((value, key) => (
         <li key={key}>
           <span>{value.app}</span>
           <a href={value.profileUrl}>{value.account}</a>
@@ -23,7 +27,7 @@ export const ContactInfo = () => {
       ))}
       <li>
         <span>Location:</span>
-        {userinfo.contact.location}
+        {location}
       </li>
     </ul>
   );

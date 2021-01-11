@@ -5,7 +5,7 @@ export interface projectsTypes {
   category: string;
   filter: string;
   thumbnail: string;
-  date: Date;
+  date: string;
   meta: any; //Extra things yatta json object
   description: string[][];
   images: string[];
@@ -19,7 +19,7 @@ export const temp_projectsInfo: projectsTypes[] = [
     category: "Software Project",
     filter: "software",
     thumbnail: "projects/Software/FantasyCleanupCrew/fcc_thumb.jpg",
-    date: new Date("10, 1, 2019"),
+    date:"10, 1, 2019",
     description: [
       [
         "",
@@ -49,7 +49,7 @@ export const temp_projectsInfo: projectsTypes[] = [
     category: "Software Project",
     filter: "software",
     thumbnail: "projects/Software/HumanContactNetworksWithGans/hcnganthumb.jpg",
-    date: new Date("5, 5, 2020"),
+    date: "5, 5, 2020",
     description: [
       [
         "Description",
@@ -82,7 +82,7 @@ export const temp_projectsInfo: projectsTypes[] = [
     category: "Software Project",
     filter: "software",
     thumbnail: "projects/Software/IronLabARRTK/ocuzedsdk.jpg",
-    date: new Date("5, 1, 2020"),
+    date: "5, 1, 2020",
     description: [
       [
         "",
@@ -104,7 +104,7 @@ export const temp_projectsInfo: projectsTypes[] = [
     category: "Physical Computation Project",
     filter: "physical",
     thumbnail: "projects/Physical/ArtuatingArms/Basic.jpg",
-    date: new Date("12, 5, 2019"),
+    date: "12, 5, 2019",
     description: [
       [
         "",
@@ -139,7 +139,7 @@ export const temp_projectsInfo: projectsTypes[] = [
     category: "Software Project",
     filter: "software",
     thumbnail: "projects/Software/AirbusIdentification/kaggle.jpg",
-    date: new Date("12, 5, 2019"),
+    date: "12, 5, 2019",
     description: [
       [
         "",
@@ -168,7 +168,7 @@ export const temp_projectsInfo: projectsTypes[] = [
     category: "Software Project",
     filter: "software",
     thumbnail: "projects/Software/JetSquare/Mockup.jpg",
-    date: new Date("12, 1, 2015"),
+    date: "12, 1, 2015",
     description: [
       [
         "",
@@ -198,7 +198,7 @@ export const temp_projectsInfo: projectsTypes[] = [
     category: "Software Project",
     filter: "software",
     thumbnail: "projects/Software/RaiderIODataMining/Raiderio.jpg",
-    date: new Date("12, 4, 2019"),
+    date: "12, 4, 2019",
     description: [
       [
         "",
@@ -227,7 +227,7 @@ export const temp_projectsInfo: projectsTypes[] = [
     category: "Software Project",
     filter: "physical",
     thumbnail: "projects/Physical/SoundBox/musicbox_thumb.png",
-    date: new Date("4, 15, 2019"),
+    date: "4, 15, 2019",
     description: [
       [
         "",
@@ -258,7 +258,7 @@ export const temp_projectsInfo: projectsTypes[] = [
     category: "Software Project",
     filter: "software",
     thumbnail: "projects/Software/Libnosis/thumb.jpg",
-    date: new Date("5, 1, 2020"),
+    date: "5, 1, 2020",
     description: [
       [
         "",

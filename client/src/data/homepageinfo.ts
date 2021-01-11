@@ -19,5 +19,5 @@ export const homepageinfo: homepageinfoType = {
     "Game Designer",
     "Graphic Designer",
   ],
-  hero_portrait: "me.jpg",
+  hero_portrait: "https://i.imgur.com/RlfM2Pe.jpg",
 };

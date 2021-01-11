@@ -9,8 +9,19 @@ import { Footer } from "components/footer/Footer";
 import { ProjectsPage } from "pages/ProjectsPage";
 import { ProjectItemPage } from "pages/ProjectItemPage";
 import { ResumePage } from "pages/ResumePage";
+import { useQuery, gql } from "@apollo/client";
+
+const FOOTERDATA = gql`
+  query{
+    GetUser(id:1){
+      footerMessage
+    }
+  }
+`;
 
 function App() {
+  const { loading, error, data } = useQuery(FOOTERDATA);
+
   return (
     <PageHeader>
       <Router>
@@ -45,7 +56,8 @@ function App() {
           <Route exact component={page404} />
         </Switch>
       </Router>
-      <Footer />
+
+      {data ? <Footer footerMessage={data.GetUser.footerMessage} /> : null}
     </PageHeader>
   );
 }

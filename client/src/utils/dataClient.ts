@@ -7,26 +7,63 @@ import { temp_blogPosts } from "data/temp/temp_blogs";
 import { temp_projectsInfo } from "data/temp/temp_projects";
 import { userinfo } from "data/userinfo";
 
-export const getUserData = () => {
-  return userinfo;
-};
+import { useQuery, gql, NetworkStatus } from "@apollo/client";
 
-export const getHomePageInfo = () => {
-  return homepageinfo;
-};
+// export const getUserData = () => {
+//   return userinfo;
+// };
 
-export const getProjectMenuInfo = () => {
-  return temp_projectsMenuInfo;
-};
+// export const getHomePageInfo = () => {
+//   return homepageinfo;
+// };
 
-export const getSocialMediaInfo = () => {
-  return socialsinfo;
-};
+// export const getProjectMenuInfo = () => {
+//   return temp_projectsMenuInfo;
+// };
 
-export const getProjectInfo = () => {
-  return temp_projectsInfo;
-};
+// const SOCIALS_DATA = gql`
+//   query($id: Float!) {
+//     GetSocials(id: $id) {
+//       id
+//       json
+//     }
+//   }
+// `;
 
-export const getBlogPosts = () => {
-  return temp_blogPosts;
-};
+// export const getSocialMediaInfo = () => {
+//   // const SOCIALS_DATA = gql`
+//   //   query($id: Float!) {
+//   //     GetSocials(id: $id) {
+//   //       id
+//   //       json
+//   //     }
+//   //   }
+//   // `;
+//   // const {
+//   //   loading: socialsLoading,
+//   //   error: socialsError,
+//   //   data: socialsData,
+//   //   refetch: socialsRefetch,
+//   //   networkStatus: socialsNetworkStatus,
+//   // } = useQuery(SOCIALS_DATA, {
+//   //   variables: { id: 1 },
+//   //   //onCompleted: editData,
+//   // });
+
+//   // // return socialsData.GetSocials;
+//   // if (socialsData) {
+//   //   return socialsData.GetSocials;
+//   // } else {
+    
+//   // }
+
+//   return socialsinfo;
+// };
+
+// export const getProjectInfo = () => {
+//   return temp_projectsInfo;
+// };
+
+// export const getBlogPosts = () => {
+//   return temp_blogPosts;
+// };

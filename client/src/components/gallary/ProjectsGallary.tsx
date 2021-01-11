@@ -1,9 +1,10 @@
 import "assets/css/components/ProjectsGallery.scss";
 import { projectsTypes } from "data/temp/temp_projects";
 import React, { useState } from "react";
-import { Button, Container, Menu } from "semantic-ui-react";
-import { getProjectInfo, getProjectMenuInfo } from "utils/dataClient";
+import { Button, Container, Loader, Menu } from "semantic-ui-react";
 import { GallaryElement } from "./GallaryElement";
+
+import { useQuery, gql, useMutation, NetworkStatus } from "@apollo/client";
 
 const masonryOptions = {
   transitionDuration: 0,
@@ -15,43 +16,117 @@ const menuStyle = {
   whiteSpace: "nowrap",
 };
 
-export const ProjectsGallary = ({ limit }: { limit?: number }) => {
-  const projectData = getProjectInfo();
-  const projectMenuData = getProjectMenuInfo();
+const PROJECT_DATA = gql`
+  query {
+    GetProjects {
+      id
+      title
+      subtitle
+      category
+      filter
+      thumbnail
+      date
+      meta
+      description
+      images
+    }
+  }
+`;
 
+const PROJECT_MENU_DATA = gql`
+  query {
+    GetProjectMenu(id: 1) {
+      json
+    }
+  }
+`;
+
+export const ProjectsGallary = ({ limit }: { limit?: number }) => {
   const [filter, setFilter] = useState("*");
 
   const changeFilter = (filter: string) => {
     setFilter(filter);
   };
 
+  const editData: any = (data: any) => {
+    console.log(JSON.parse(data.meta));
+    const editedData = {
+      id: +data.id,
+      title: data.title,
+      subtitle: data.subtitle,
+      category: data.category,
+      filter: data.filter,
+      thumbnail: data.thumbnail,
+      date: data.date,
+      meta: JSON.parse(data.meta),
+      description: data.description,
+      images: data.images,
+    };
+    console.log(editedData);
+    return editedData;
+  };
+
+  const {
+    loading: projectsLoading,
+    error: projectsError,
+    data: projectsData,
+  } = useQuery(PROJECT_DATA);
+
+  const {
+    loading: menuLoading,
+    error: menuError,
+    data: projectMenuData,
+  } = useQuery(PROJECT_MENU_DATA);
+
   return (
     <div>
       <Container className="gallery_menu" fluid>
-        <Menu text compact size="huge" stackable>
-          {projectMenuData.map((item) => (
-            <Menu.Item
-              key={item.id}
-              as={Button}
-              name={item.filter}
-              active={item.filter === filter}
-              className="gallery_menu_item"
-              onClick={() => changeFilter(item.filter)}
-            >
-              {item.title}
-            </Menu.Item>
-          ))}
-        </Menu>
+        {projectMenuData ? (
+          <Menu text compact size="huge" stackable>
+            {console.log(JSON.parse(projectMenuData.GetProjectMenu.json))}
+            {JSON.parse(projectMenuData.GetProjectMenu.json).projectmenu.map(
+              (item: any) => (
+                <Menu.Item
+                  key={item.id}
+                  as={Button}
+                  name={item.filter}
+                  active={item.filter === filter}
+                  className="gallery_menu_item"
+                  onClick={() => changeFilter(item.filter)}
+                >
+                  {item.title}
+                </Menu.Item>
+              )
+            )}
+          </Menu>
+        ) : null}
       </Container>
 
       {/* Masonry Gallary */}
-      <div className="gallery">
-        <div className="gallery_elements">
-          {projectData.map((project: projectsTypes, key: number) => (
-            <GallaryElement key={key} element={project} filter={filter} />
-          ))}
+      {projectsData ? (
+        <div className="gallery">
+          <div className="gallery_elements">
+            {projectsData.GetProjects.map((project: any, key: number) => (
+              <GallaryElement
+                key={key}
+                element={editData(project)}
+                filter={filter}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <Loader size="small">Loading</Loader>
+        // <div className="gallery">
+
+        //   <div className="gallery_elements">
+        //     {/* {projectData.map((project: projectsTypes, key: number) => (
+        //       <GallaryElement key={key} element={project} filter={filter} />
+        //     ))} */}
+
+        //   </div>
+        // </div>
+      )}
     </div>
   );
 };
