@@ -40,7 +40,7 @@ Backend Deploy Status:
 <br />
 <p align="center">
   <a href="https://github.com/jskyjohnson/FullstackPortfolio">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://i.imgur.com/u272DAu.png" alt="Logo">
   </a>
 
   <h1 align="center">Fullstack Portfolio</h1>
