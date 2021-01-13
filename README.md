@@ -50,9 +50,10 @@ Backend Deploy Status:
   
 This is the code that I use to manage my personal portfolio [site](https://skyjohnson.me). Please feel free to send me a message if you're curious about this project at jsky.johnson@gmail.com. If you end up using this code to create your own website I would love to hear about it! 
     <br />
+    Welcome to my Fullstack portfolio project! The goals of this project are to create a simple and deployable fullstack personal website that lets you change the values on the main page without having to rebuild it.
+    This project will continue to be worked on into the future! Please stay tuned and contribute!
+    
 <!--     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> -->
-    <br />
-    <br />
 <a href="https://skyjohnson.me/">View the live website</a>
     <!-- ·
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
@@ -198,15 +199,15 @@ Project Link: [https://github.com/jskyjohnson/FullstackPortfolio](https://github
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/jskyjohnson/repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/jskyjohnson/FullstackPortfolio.svg?style=for-the-badge
 [contributors-url]: https://github.com/jskyjohnson/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/jskyjohnson/repo.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/jskyjohnson/FullstackPortfolio.svg?style=for-the-badge
 [forks-url]: https://github.com/jskyjohnson/FullstackPortfolio/network/members
-[stars-shield]: https://img.shields.io/github/stars/jskyjohnson/repo.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/jskyjohnson/FullstackPortfolio.svg?style=for-the-badge
 [stars-url]: https://github.com/jskyjohnson/FullstackPortfolio/stargazers
-[issues-shield]: https://img.shields.io/github/issues/jskyjohnson/repo.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/jskyjohnson/FullstackPortfolio.svg?style=for-the-badge
 [issues-url]: https://github.com/jskyjohnson/FullstackPortfolio/issues
-[license-shield]: https://img.shields.io/github/license/jskyjohnson/repo.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/jskyjohnson/FullstackPortfolio.svg?style=for-the-badge
 [license-url]: https://github.com/jskyjohnson/FullstackPortfolio/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jskyjohnson/
