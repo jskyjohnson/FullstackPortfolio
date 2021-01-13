@@ -40,8 +40,7 @@ This is the code that I use to manage my personal portfolio <a href="https://sky
   </p>
 </p>
 
-<!---
-<!-- TABLE OF CONTENTS -->
+<!--- TABLE OF CONTENTS 
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
@@ -108,15 +107,6 @@ However, please checkout the frontend-only branch. It isn't as updated as often 
 ## Getting Started
 
 To get started, first make sure that NodeJS, and PostgreSQL are installed. Then set to set up a local copy, run the following commands in your favorite shell.
-
-<!---
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ``` --->
 
 ### Installation
 1. Clone the repo
