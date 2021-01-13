@@ -40,6 +40,7 @@ This is the code that I use to manage my personal portfolio <a href="https://sky
   </p>
 </p>
 
+<!---
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
@@ -72,7 +73,7 @@ This is the code that I use to manage my personal portfolio <a href="https://sky
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
-
+--->
 
 
 <!-- ABOUT THE PROJECT -->
