@@ -1,25 +1,3 @@
-
-
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email, project_title, project_description
--->
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
@@ -47,9 +25,11 @@ Backend Deploy Status:
 
   <h3>Hello! </h3>
   <p align="center">
-  
 This is the code that I use to manage my personal portfolio [site](https://skyjohnson.me). Please feel free to send me a message if you're curious about this project at jsky.johnson@gmail.com. If you end up using this code to create your own website I would love to hear about it! 
+  </p>
+  
     <br />
+  <p align="center">  
     Welcome to my Fullstack portfolio project! The goals of this project are to create a simple and deployable fullstack personal website that lets you change the values on the main page without having to rebuild it.
     This project will continue to be worked on into the future! Please stay tuned and contribute!
     
