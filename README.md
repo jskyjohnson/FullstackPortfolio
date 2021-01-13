@@ -78,8 +78,6 @@ This is the code that I use to manage my personal portfolio <a href="https://sky
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 This website started as a ReactJS static site generator but I got annoyed with having to upload and redeploy the frontend everytime I wanted to add a new project or edit a value. So I decided to make the content pull from an Apollo GraphQL api for certain values that change often.
 
 However, please checkout the frontend-only branch. It isn't as updated as often but I plan to carry out support for both, if you do not wish to deploy a backend VPS.
