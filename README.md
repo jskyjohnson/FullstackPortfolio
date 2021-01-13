@@ -24,11 +24,11 @@ Backend Deploy Status:
   <h1 align="center">Fullstack Portfolio</h1>
 
   <h3>Hello! </h3>
-  <p align="center">
+  <p>
 This is the code that I use to manage my personal portfolio <a href="https://skyjohnson.me">site</a>. Please feel free to send me a message if you're curious about this project at jsky.johnson@gmail.com. If you end up using this code to create your own website I would love to hear about it! 
   </p>
   
-  <p align="center">  
+  <p>  
     Welcome to my Fullstack portfolio project! The goals of this project are to create a simple, stylish, personal website that mixes someone focused in design and software development. All as a deployable fullstack website that lets you change the values on the main page without having to rebuild it.
     
 <!--     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> -->
