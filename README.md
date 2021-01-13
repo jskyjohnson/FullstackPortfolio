@@ -28,7 +28,6 @@ Backend Deploy Status:
 This is the code that I use to manage my personal portfolio [site](https://skyjohnson.me). Please feel free to send me a message if you're curious about this project at jsky.johnson@gmail.com. If you end up using this code to create your own website I would love to hear about it! 
   </p>
   
-    <br />
   <p align="center">  
     Welcome to my Fullstack portfolio project! The goals of this project are to create a simple and deployable fullstack personal website that lets you change the values on the main page without having to rebuild it.
     This project will continue to be worked on into the future! Please stay tuned and contribute!
@@ -36,9 +35,9 @@ This is the code that I use to manage my personal portfolio [site](https://skyjo
 <!--     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> -->
 <a href="https://skyjohnson.me/">View the live website</a>
     <!-- ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>-->
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a> -->
+    <a href="https://github.com/jskyjohnson/FullstackPortfolio/issues">Request Feature</a> 
   </p>
 </p>
 
